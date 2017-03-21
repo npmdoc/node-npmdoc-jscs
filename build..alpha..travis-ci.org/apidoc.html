@@ -1,0 +1,4902 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api-documentation for
+    <a
+
+        href="http://jscs.info"
+
+    >jscs (v3.0.7)</a>
+</h1>
+<h4>JavaScript Code Style</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jscs">module jscs</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.errors">
+            function <span class="apidocSignatureSpan">jscs.</span>errors
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file">
+            function <span class="apidocSignatureSpan">jscs.</span>js_file
+            <span class="apidocSignatureSpan">(params)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.super_">
+            function <span class="apidocSignatureSpan">jscs.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.token_assert">
+            function <span class="apidocSignatureSpan">jscs.</span>token_assert
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.token_index">
+            function <span class="apidocSignatureSpan">jscs.</span>token_index
+            <span class="apidocSignatureSpan">(firstToken)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jscs.</span>cli_config</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jscs.</span>errors.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jscs.</span>js_file.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jscs.</span>super_.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jscs.</span>token_assert.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jscs.</span>token_categorizer</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jscs.</span>token_index.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jscs.</span>tree_iterator</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jscs.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jscs.cli_config">module jscs.cli_config</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.cli_config.getContent">
+            function <span class="apidocSignatureSpan">jscs.cli_config.</span>getContent
+            <span class="apidocSignatureSpan">(config, directory)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.cli_config.getReporter">
+            function <span class="apidocSignatureSpan">jscs.cli_config.</span>getReporter
+            <span class="apidocSignatureSpan">(reporter, colors)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.cli_config.load">
+            function <span class="apidocSignatureSpan">jscs.cli_config.</span>load
+            <span class="apidocSignatureSpan">(config, cwd)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jscs.errors">module jscs.errors</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.errors.errors">
+            function <span class="apidocSignatureSpan">jscs.</span>errors
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.errors.getPosition">
+            function <span class="apidocSignatureSpan">jscs.errors.</span>getPosition
+            <span class="apidocSignatureSpan">(error, tokenIndex)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jscs.errors.prototype">module jscs.errors.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.errors.prototype._addError">
+            function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>_addError
+            <span class="apidocSignatureSpan">(errorInfo)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.errors.prototype._addParseError">
+            function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>_addParseError
+            <span class="apidocSignatureSpan">(errorInfo)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.errors.prototype._prepareMessage">
+            function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>_prepareMessage
+            <span class="apidocSignatureSpan">(errorInfo)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.errors.prototype.add">
+            function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>add
+            <span class="apidocSignatureSpan">(message, element, offset)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.errors.prototype.calculateErrorLocations">
+            function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>calculateErrorLocations
+            <span class="apidocSignatureSpan">(tokenIndex)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.errors.prototype.cast">
+            function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>cast
+            <span class="apidocSignatureSpan">(errorInfo)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.errors.prototype.explainError">
+            function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>explainError
+            <span class="apidocSignatureSpan">(error, colorize)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.errors.prototype.filter">
+            function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>filter
+            <span class="apidocSignatureSpan">(filter)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.errors.prototype.getErrorCount">
+            function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>getErrorCount
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.errors.prototype.getErrorList">
+            function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>getErrorList
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.errors.prototype.getFilename">
+            function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>getFilename
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.errors.prototype.getValidationErrorCount">
+            function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>getValidationErrorCount
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.errors.prototype.isEmpty">
+            function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>isEmpty
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.errors.prototype.setCurrentRule">
+            function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>setCurrentRule
+            <span class="apidocSignatureSpan">(rule)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.errors.prototype.stripErrorList">
+            function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>stripErrorList
+            <span class="apidocSignatureSpan">(length)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jscs.js_file">module jscs.js_file</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.js_file">
+            function <span class="apidocSignatureSpan">jscs.</span>js_file
+            <span class="apidocSignatureSpan">(params)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jscs.js_file.prototype">module jscs.js_file.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype._setTokenBefore">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>_setTokenBefore
+            <span class="apidocSignatureSpan">(token, fragment)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.findNextOperatorToken">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>findNextOperatorToken
+            <span class="apidocSignatureSpan">(token, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.findNextToken">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>findNextToken
+            <span class="apidocSignatureSpan">(token, type, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.findPrevOperatorToken">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>findPrevOperatorToken
+            <span class="apidocSignatureSpan">(token, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.findPrevToken">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>findPrevToken
+            <span class="apidocSignatureSpan">(token, type, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getComments">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getComments
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getDialect">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getDialect
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getDistanceBetween">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getDistanceBetween
+            <span class="apidocSignatureSpan">(tokenBefore, tokenAfter)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getFilename">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getFilename
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getFirstNodeToken">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getFirstNodeToken
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getFirstToken">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getFirstToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getFirstTokenOnLineWith">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getFirstTokenOnLineWith
+            <span class="apidocSignatureSpan">(element, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getLastNodeToken">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getLastNodeToken
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getLastToken">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getLastToken
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getLastTokenOnLine">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getLastTokenOnLine
+            <span class="apidocSignatureSpan">(lineNumber, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getLineBreakStyle">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getLineBreakStyle
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getLineBreaks">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getLineBreaks
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getLineCountBetween">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getLineCountBetween
+            <span class="apidocSignatureSpan">(tokenBefore, tokenAfter)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getLines">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getLines
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getLinesWithCommentsRemoved">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getLinesWithCommentsRemoved
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getNextToken">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getNextToken
+            <span class="apidocSignatureSpan">(token, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getNodesByType">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getNodesByType
+            <span class="apidocSignatureSpan">(type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getParseErrors">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getParseErrors
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getPrevToken">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getPrevToken
+            <span class="apidocSignatureSpan">(token, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getProgram">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getProgram
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getScopes">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getScopes
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getSource">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getSource
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getTree">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getTree
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.getWhitespaceBefore">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getWhitespaceBefore
+            <span class="apidocSignatureSpan">(token)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.isOnTheSameLine">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>isOnTheSameLine
+            <span class="apidocSignatureSpan">(tokenBefore, tokenAfter)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.iterate">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>iterate
+            <span class="apidocSignatureSpan">(cb, tree)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.iterateNodesByType">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>iterateNodesByType
+            <span class="apidocSignatureSpan">(type, cb, context)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.iterateTokensByType">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>iterateTokensByType
+            <span class="apidocSignatureSpan">(type, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.iterateTokensByTypeAndValue">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>iterateTokensByTypeAndValue
+            <span class="apidocSignatureSpan">(type, value, cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.render">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>render
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.js_file.prototype.setWhitespaceBefore">
+            function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>setWhitespaceBefore
+            <span class="apidocSignatureSpan">(token, whitespace)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jscs.super_">module jscs.super_</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.super_.super_">
+            function <span class="apidocSignatureSpan">jscs.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jscs.super_.prototype">module jscs.super_.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.super_.prototype._addParseError">
+            function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>_addParseError
+            <span class="apidocSignatureSpan">(errors, parseError, file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.super_.prototype._checkJsFile">
+            function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>_checkJsFile
+            <span class="apidocSignatureSpan">(file, errors)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.super_.prototype._createConfiguration">
+            function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>_createConfiguration
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.super_.prototype._createJsFileInstance">
+            function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>_createJsFileInstance
+            <span class="apidocSignatureSpan">(filename, source)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.super_.prototype._fixCommonError">
+            function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>_fixCommonError
+            <span class="apidocSignatureSpan">(error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.super_.prototype._fixJsFile">
+            function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>_fixJsFile
+            <span class="apidocSignatureSpan">(file, errors)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.super_.prototype._fixSpecificError">
+            function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>_fixSpecificError
+            <span class="apidocSignatureSpan">(file, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.super_.prototype.checkString">
+            function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>checkString
+            <span class="apidocSignatureSpan">(source, filename)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.super_.prototype.configure">
+            function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>configure
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.super_.prototype.fixString">
+            function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>fixString
+            <span class="apidocSignatureSpan">(source, filename)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.super_.prototype.getConfiguration">
+            function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>getConfiguration
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.super_.prototype.getProcessedConfig">
+            function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>getProcessedConfig
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.super_.prototype.maxErrorsEnabled">
+            function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>maxErrorsEnabled
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.super_.prototype.maxErrorsExceeded">
+            function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>maxErrorsExceeded
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.super_.prototype.registerDefaultRules">
+            function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>registerDefaultRules
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.super_.prototype.registerRule">
+            function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>registerRule
+            <span class="apidocSignatureSpan">(rule)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jscs.token_assert">module jscs.token_assert</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.token_assert.token_assert">
+            function <span class="apidocSignatureSpan">jscs.</span>token_assert
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.token_assert.super_">
+            function <span class="apidocSignatureSpan">jscs.token_assert.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jscs.token_assert.prototype">module jscs.token_assert.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.token_assert.prototype._augmentLineCount">
+            function <span class="apidocSignatureSpan">jscs.token_assert.prototype.</span>_augmentLineCount
+            <span class="apidocSignatureSpan">(options, lineCount)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.token_assert.prototype._updateCommentWhitespace">
+            function <span class="apidocSignatureSpan">jscs.token_assert.prototype.</span>_updateCommentWhitespace
+            <span class="apidocSignatureSpan">(token, indentChar, actual, expected)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.token_assert.prototype._updateWhitespaceByLine">
+            function <span class="apidocSignatureSpan">jscs.token_assert.prototype.</span>_updateWhitespaceByLine
+            <span class="apidocSignatureSpan">(token, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.token_assert.prototype._validateOptions">
+            function <span class="apidocSignatureSpan">jscs.token_assert.prototype.</span>_validateOptions
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.token_assert.prototype.differentLine">
+            function <span class="apidocSignatureSpan">jscs.token_assert.prototype.</span>differentLine
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.token_assert.prototype.indentation">
+            function <span class="apidocSignatureSpan">jscs.token_assert.prototype.</span>indentation
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.token_assert.prototype.linesBetween">
+            function <span class="apidocSignatureSpan">jscs.token_assert.prototype.</span>linesBetween
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.token_assert.prototype.noWhitespaceBetween">
+            function <span class="apidocSignatureSpan">jscs.token_assert.prototype.</span>noWhitespaceBetween
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.token_assert.prototype.sameLine">
+            function <span class="apidocSignatureSpan">jscs.token_assert.prototype.</span>sameLine
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.token_assert.prototype.spacesBetween">
+            function <span class="apidocSignatureSpan">jscs.token_assert.prototype.</span>spacesBetween
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.token_assert.prototype.whitespaceBetween">
+            function <span class="apidocSignatureSpan">jscs.token_assert.prototype.</span>whitespaceBetween
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jscs.token_categorizer">module jscs.token_categorizer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.token_categorizer.categorizeCloseParen">
+            function <span class="apidocSignatureSpan">jscs.token_categorizer.</span>categorizeCloseParen
+            <span class="apidocSignatureSpan">(token)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.token_categorizer.categorizeOpenParen">
+            function <span class="apidocSignatureSpan">jscs.token_categorizer.</span>categorizeOpenParen
+            <span class="apidocSignatureSpan">(token)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jscs.token_index">module jscs.token_index</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.token_index.token_index">
+            function <span class="apidocSignatureSpan">jscs.</span>token_index
+            <span class="apidocSignatureSpan">(firstToken)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jscs.token_index.prototype">module jscs.token_index.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.token_index.prototype._buildIndex">
+            function <span class="apidocSignatureSpan">jscs.token_index.prototype.</span>_buildIndex
+            <span class="apidocSignatureSpan">(firstToken)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.token_index.prototype.getElementLoc">
+            function <span class="apidocSignatureSpan">jscs.token_index.prototype.</span>getElementLoc
+            <span class="apidocSignatureSpan">(element)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.token_index.prototype.isRuleEnabled">
+            function <span class="apidocSignatureSpan">jscs.token_index.prototype.</span>isRuleEnabled
+            <span class="apidocSignatureSpan">(ruleName, element)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jscs.tree_iterator">module jscs.tree_iterator</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.tree_iterator.iterate">
+            function <span class="apidocSignatureSpan">jscs.tree_iterator.</span>iterate
+            <span class="apidocSignatureSpan">(node, cb)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.jscs.utils">module jscs.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.utils.getFunctionNodeFromIIFE">
+            function <span class="apidocSignatureSpan">jscs.utils.</span>getFunctionNodeFromIIFE
+            <span class="apidocSignatureSpan">(node)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.utils.isPragma">
+            function <span class="apidocSignatureSpan">jscs.utils.</span>isPragma
+            <span class="apidocSignatureSpan">(additionalExceptions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.utils.isRelativePath">
+            function <span class="apidocSignatureSpan">jscs.utils.</span>isRelativePath
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.utils.isSnakeCased">
+            function <span class="apidocSignatureSpan">jscs.utils.</span>isSnakeCased
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.utils.isValidIdentifierName">
+            function <span class="apidocSignatureSpan">jscs.utils.</span>isValidIdentifierName
+            <span class="apidocSignatureSpan">(name, dialect)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.utils.normalizePath">
+            function <span class="apidocSignatureSpan">jscs.utils.</span>normalizePath
+            <span class="apidocSignatureSpan">(filepath, basePath)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.utils.promisify">
+            function <span class="apidocSignatureSpan">jscs.utils.</span>promisify
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.jscs.utils.trimUnderscores">
+            function <span class="apidocSignatureSpan">jscs.utils.</span>trimUnderscores
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jscs.utils.</span>binaryOperators</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jscs.utils.</span>curlyBracedKeywords</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jscs.utils.</span>incrementAndDecrementOperators</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jscs.utils.</span>operators</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jscs.utils.</span>spacedKeywords</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jscs.utils.</span>unaryOperators</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jscs" id="apidoc.module.jscs">module jscs</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.errors" id="apidoc.element.jscs.errors">
+        function <span class="apidocSignatureSpan">jscs.</span>errors
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">errors = function (file) {
+    this._errorList = [];
+    this._file = file;
+    this._currentRule = &#x27;&#x27;;
+
+<span class="apidocCodeCommentSpan">    /**
+     * @type {TokenAssert}
+     * @public
+     */
+</span>    this.assert = new TokenAssert(file);
+    this.assert.on(&#x27;error&#x27;, this._addError.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file" id="apidoc.element.jscs.js_file">
+        function <span class="apidocSignatureSpan">jscs.</span>js_file
+        <span class="apidocSignatureSpan">(params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js_file = function (params) {
+    params = params || {};
+    this._parseErrors = [];
+    this._filename = params.filename;
+    this._source = params.source;
+
+    this._es3 = params.es3 || false;
+
+    this._lineBreaks = null;
+    this._lines = this._source.split(/\r\n|\r|\n/);
+
+    var parser = new Parser({
+        strictMode: false,
+        languageExtensions: {
+            gritDirectives: true,
+            appleInstrumentationDirectives: true
+        }
+    });
+
+    try {
+        this._program = parser.parse(this._source);
+    } catch (e) {
+        this._parseErrors.push(e);
+        this._program = new Program([
+            new Token(&#x27;EOF&#x27;, &#x27;&#x27;)
+        ]);
+    }
+
+    // Lazy initialization
+    this._scopes = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.super_" id="apidoc.element.jscs.super_">
+        function <span class="apidocSignatureSpan">jscs.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_ = function () {
+    this._configuredRules = [];
+
+    this._errorsFound = 0;
+    this._maxErrorsExceeded = false;
+
+    this._configuration = this._createConfiguration();
+    this._configuration.registerDefaultPresets();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.token_assert" id="apidoc.element.jscs.token_assert">
+        function <span class="apidocSignatureSpan">jscs.</span>token_assert
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function TokenAssert(file) {
+    EventEmitter.call(this);
+
+    this._file = file;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.token_index" id="apidoc.element.jscs.token_index">
+        function <span class="apidocSignatureSpan">jscs.</span>token_index
+        <span class="apidocSignatureSpan">(firstToken)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function TokenIndex(firstToken) {
+    this._buildIndex(firstToken);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jscs.cli_config" id="apidoc.module.jscs.cli_config">module jscs.cli_config</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.cli_config.getContent" id="apidoc.element.jscs.cli_config.getContent">
+        function <span class="apidocSignatureSpan">jscs.cli_config.</span>getContent
+        <span class="apidocSignatureSpan">(config, directory)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getContent = function (config, directory) {
+    if (!config) {
+        return;
+    }
+
+    if (!directory) {
+        directory = process.cwd();
+    }
+
+    var configPath = path.resolve(directory, config);
+    var ext;
+    var data;
+    var content;
+    var requireConfigPath;
+
+    if (fs.existsSync(configPath)) {
+        config = path.basename(config);
+        ext = path.extname(configPath);
+
+        if (ext === &#x27;.js&#x27;) {
+            content = require(configPath);
+        } else {
+            data = stripBOM(fs.readFileSync(configPath, &#x27;utf8&#x27;));
+
+            if (ext === &#x27;.json&#x27;) {
+                content = parseJson(stripJSONComments(data));
+            } else if (ext === &#x27;.yaml&#x27;) {
+                content = yaml.safeLoad(data);
+            } else {
+                // try both JSON and YAML
+
+                try {
+                    content = parseJson(stripJSONComments(data));
+                } catch (jsonError) {
+                    try {
+                        content = yaml.safeLoad(data);
+                    } catch (yamlError) {
+                        if (stripJSONComments(data).trim()[0] === &#x27;{&#x27;) {
+                            // the intention was probably JSON
+                            throw jsonError;
+                        } else {
+                            // assume the intention was YAML
+                            throw yamlError;
+                        }
+                    }
+                }
+            }
+        }
+    } else {
+        // Try to load it as a node module
+        try {
+            requireConfigPath = resolve.sync(config, { basedir: directory });
+            content = require(requireConfigPath);
+        } catch (e) {}
+    }
+
+    if (content) {
+        // Adding property via Object.defineProperty makes it
+        // non-enumerable and avoids warning for unsupported rules
+        Object.defineProperty(content, &#x27;configPath&#x27;, {
+            value: requireConfigPath || configPath
+        });
+    }
+
+    return content &#x26;&#x26; config === &#x27;package.json&#x27; ? content.jscsConfig : content;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+exports.load = function(config, cwd) {
+var content;
+var directory = cwd || process.cwd();
+
+// If config option is given, attempt to load it
+if (config) {
+    return this.<span class="apidocCodeKeywordSpan">getContent</span>(config, directory);
+}
+
+content = this.getContent(
+    findup(configs, { nocase: true, cwd: directory }, function(configPath) {
+        if (path.basename(configPath) === &#x27;package.json&#x27;) {
+            return !!this.getContent(configPath);
+        }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.cli_config.getReporter" id="apidoc.element.jscs.cli_config.getReporter">
+        function <span class="apidocSignatureSpan">jscs.cli_config.</span>getReporter
+        <span class="apidocSignatureSpan">(reporter, colors)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getReporter = function (reporter, colors) {
+    var writerPath;
+    var writer;
+
+    if (colors !== false) {
+        colors = true;
+    }
+
+    if (reporter) {
+        // ensure reporter is a string (and allow non-string types to be coerced)
+        reporter = reporter.toString();
+        writerPath = path.resolve(process.cwd(), reporter);
+
+        if (!fs.existsSync(writerPath)) {
+            writerPath = path.resolve(__dirname, &#x27;./reporters/&#x27; + reporter);
+        }
+    } else {
+        writerPath = path.resolve(
+            __dirname, &#x27;./reporters/&#x27;, (colors &#x26;&#x26; supportsColor ? &#x27;console&#x27; : &#x27;text&#x27;)
+        );
+    }
+
+    try {
+        writer = require(writerPath);
+    } catch (e) {
+        writer = null;
+    }
+
+    if (!writer) {
+        try {
+            writer = require(reporter);
+            writerPath = reporter;
+        } catch (e) {}
+    }
+
+    return {
+        path: writerPath,
+        writer: writer
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+if (!args.length &#x26;&#x26; process.stdin.isTTY &#x26;&#x26; typeof program.autoConfigure !== &#x27;string&#x27;) {
+    console.error(&#x27;No input files specified. Try option --help for usage information.&#x27;);
+    defer.reject(3);
+
+    return returnArgs;
+}
+
+reporter = configFile.<span class="apidocCodeKeywordSpan">getReporter</span>(program.reporter, program.colors);
+
+returnArgs.reporter = reporter.path;
+
+if (!reporter.writer) {
+    console.error(&#x27;Reporter &#x22;%s&#x22; does not exist.&#x27;, program.reporter);
+    returnArgs.reporter = reporter.path;
+    defer.reject(6);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.cli_config.load" id="apidoc.element.jscs.cli_config.load">
+        function <span class="apidocSignatureSpan">jscs.cli_config.</span>load
+        <span class="apidocSignatureSpan">(config, cwd)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">load = function (config, cwd) {
+    var content;
+    var directory = cwd || process.cwd();
+
+    // If config option is given, attempt to load it
+    if (config) {
+        return this.getContent(config, directory);
+    }
+
+    content = this.getContent(
+        findup(configs, { nocase: true, cwd: directory }, function(configPath) {
+            if (path.basename(configPath) === &#x27;package.json&#x27;) {
+                return !!this.getContent(configPath);
+            }
+
+            return true;
+        }.bind(this))
+    );
+
+    if (content) {
+        return content;
+    }
+
+    // Try to load standard configs from home dir
+    var directoryArr = [process.env.USERPROFILE, process.env.HOMEPATH, process.env.HOME];
+    for (var i = 0, dirLen = directoryArr.length; i &#x3c; dirLen; i++) {
+        if (!directoryArr[i]) {
+            continue;
+        }
+
+        for (var j = 0, len = configs.length; j &#x3c; len; j++) {
+            content = this.getContent(configs[j], directoryArr[i]);
+
+            if (content) {
+                return content;
+            }
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+promise.always(function(status) {
+    exit(status.valueOf());
+});
+
+try {
+    config = configFile.<span class="apidocCodeKeywordSpan">load</span>(program.config);
+} catch (e) {
+    console.error(&#x27;Config source is corrupted -&#x27;, e.toString());
+    defer.reject(5);
+
+    return returnArgs;
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jscs.errors" id="apidoc.module.jscs.errors">module jscs.errors</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.errors.errors" id="apidoc.element.jscs.errors.errors">
+        function <span class="apidocSignatureSpan">jscs.</span>errors
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">errors = function (file) {
+    this._errorList = [];
+    this._file = file;
+    this._currentRule = &#x27;&#x27;;
+
+<span class="apidocCodeCommentSpan">    /**
+     * @type {TokenAssert}
+     * @public
+     */
+</span>    this.assert = new TokenAssert(file);
+    this.assert.on(&#x27;error&#x27;, this._addError.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.errors.getPosition" id="apidoc.element.jscs.errors.getPosition">
+        function <span class="apidocSignatureSpan">jscs.errors.</span>getPosition
+        <span class="apidocSignatureSpan">(error, tokenIndex)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getPosition = function (error, tokenIndex) {
+    var element = error.element;
+    var offset = error.offset;
+    var rule = error.rule;
+
+    if (!element) {
+        return EMPTY_POS;
+    }
+
+    if (offset === undefined) {
+        // TODO: probably should be generalized
+        if (rule === &#x27;validateQuoteMarks&#x27;) {
+            offset = 0;
+        } else if (element.getSourceCodeLength() === 1) {
+            offset = 0;
+        } else {
+            offset = (element.getNewlineCount() === 0 &#x26;&#x26; Math.ceil(element.getSourceCodeLength() / 2)) || 0;
+        }
+    }
+
+    var pos = tokenIndex ? tokenIndex.getElementLoc(element) : element.getLoc().start;
+    if (!pos) {
+        return EMPTY_POS;
+    }
+
+    if (offset === 0) {
+        return pos;
+    }
+
+    var newlineCount = element.getNewlineCount();
+    if (newlineCount &#x3e; 0) {
+        var code = element.getSourceCode();
+        LINE_SEPARATOR.lastIndex = 0;
+        var lineOffset = 0;
+        var match;
+        var previousOffset = 0;
+        var firstLineColumnOffset = pos.column;
+        while ((match = LINE_SEPARATOR.exec(code)) !== null) {
+            var currentOffset = match.index;
+            if (offset &#x3c;= currentOffset) {
+                return {
+                    line: pos.line + lineOffset,
+                    column: firstLineColumnOffset + offset - previousOffset
+                };
+            }
+            previousOffset = currentOffset + match[0].length;
+            firstLineColumnOffset = 0;
+            lineOffset++;
+        }
+        return {
+            line: pos.line + newlineCount,
+            column: offset - previousOffset
+        };
+    } else {
+        return {
+            line: pos.line,
+            column: pos.column + offset
+        };
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+
+/**
+ * @param {TokenIndex} tokenIndex
+ */
+calculateErrorLocations: function(tokenIndex) {
+    this._errorList.forEach(function(error) {
+        var pos = Errors.<span class="apidocCodeKeywordSpan">getPosition</span>(error, tokenIndex);
+        error.line = pos.line;
+        error.column = pos.column;
+    });
+},
+
+/**
+ * Formats error for further output.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jscs.errors.prototype" id="apidoc.module.jscs.errors.prototype">module jscs.errors.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.errors.prototype._addError" id="apidoc.element.jscs.errors.prototype._addError">
+        function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>_addError
+        <span class="apidocSignatureSpan">(errorInfo)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_addError = function (errorInfo) {
+    this._errorList.push({
+        filename: this._file.getFilename(),
+        rule: this._currentRule,
+        message: this._prepareMessage(errorInfo),
+        element: errorInfo.element,
+        offset: errorInfo.offset,
+        additional: errorInfo.additional,
+        fixed: false,
+        fix: errorInfo.fix
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ */
+add: function(message, element, offset) {
+    if (message instanceof Error) {
+        this._addParseError(message);
+        return;
+    }
+
+    this.<span class="apidocCodeKeywordSpan">_addError</span>({
+        message: message,
+        element: element,
+        offset: offset
+    });
+},
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.errors.prototype._addParseError" id="apidoc.element.jscs.errors.prototype._addParseError">
+        function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>_addParseError
+        <span class="apidocSignatureSpan">(errorInfo)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_addParseError = function (errorInfo) {
+    this._errorList.push({
+        filename: this._file.getFilename(),
+        rule: &#x27;parseError&#x27;,
+        message: errorInfo.message,
+        line: errorInfo.loc ? errorInfo.loc.line : 1,
+        column: errorInfo.loc ? errorInfo.loc.column : 0
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+     *
+     * @param {String | Error} message
+     * @param {cst.types.Element} element
+     * @param {Number} [offset] relative offset
+     */
+    add: function(message, element, offset) {
+if (message instanceof Error) {
+    this.<span class="apidocCodeKeywordSpan">_addParseError</span>(message);
+    return;
+}
+
+this._addError({
+    message: message,
+    element: element,
+    offset: offset
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.errors.prototype._prepareMessage" id="apidoc.element.jscs.errors.prototype._prepareMessage">
+        function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>_prepareMessage
+        <span class="apidocSignatureSpan">(errorInfo)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_prepareMessage = function (errorInfo) {
+    var rule = errorInfo instanceof Error ? &#x27;parseError&#x27; : this._currentRule;
+
+    if (rule) {
+        return rule + &#x27;: &#x27; + errorInfo.message;
+    }
+
+    return errorInfo.message;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @param {Object} errorInfo
+ * @private
+ */
+_addError: function(errorInfo) {
+    this._errorList.push({
+        filename: this._file.getFilename(),
+        rule: this._currentRule,
+        message: this.<span class="apidocCodeKeywordSpan">_prepareMessage</span>(errorInfo),
+        element: errorInfo.element,
+        offset: errorInfo.offset,
+        additional: errorInfo.additional,
+        fixed: false,
+        fix: errorInfo.fix
+    });
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.errors.prototype.add" id="apidoc.element.jscs.errors.prototype.add">
+        function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>add
+        <span class="apidocSignatureSpan">(message, element, offset)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">add = function (message, element, offset) {
+    if (message instanceof Error) {
+        this._addParseError(message);
+        return;
+    }
+
+    this._addError({
+        message: message,
+        element: element,
+        offset: offset
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.errors.prototype.calculateErrorLocations" id="apidoc.element.jscs.errors.prototype.calculateErrorLocations">
+        function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>calculateErrorLocations
+        <span class="apidocSignatureSpan">(tokenIndex)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">calculateErrorLocations = function (tokenIndex) {
+    this._errorList.forEach(function(error) {
+        var pos = Errors.getPosition(error, tokenIndex);
+        error.line = pos.line;
+        error.column = pos.column;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.errors.prototype.cast" id="apidoc.element.jscs.errors.prototype.cast">
+        function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>cast
+        <span class="apidocSignatureSpan">(errorInfo)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cast = function (errorInfo) {
+    this._addError(errorInfo);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.errors.prototype.explainError" id="apidoc.element.jscs.errors.prototype.explainError">
+        function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>explainError
+        <span class="apidocSignatureSpan">(error, colorize)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">explainError = function (error, colorize) {
+    var lineNumber = error.line - 1;
+    var lines = this._file.getLines();
+    var result = [
+        renderLine(lineNumber, lines[lineNumber], colorize),
+        renderPointer(error.column, colorize)
+    ];
+    var i = lineNumber - 1;
+    var linesAround = 2;
+    while (i &#x3e;= 0 &#x26;&#x26; i &#x3e;= (lineNumber - linesAround)) {
+        result.unshift(renderLine(i, lines[i], colorize));
+        i--;
+    }
+    i = lineNumber + 1;
+    while (i &#x3c; lines.length &#x26;&#x26; i &#x3c;= (lineNumber + linesAround)) {
+        result.push(renderLine(i, lines[i], colorize));
+        i++;
+    }
+    result.unshift(formatErrorMessage(error.message, this.getFilename(), colorize));
+    return result.join(&#x27;\n&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.errors.prototype.filter" id="apidoc.element.jscs.errors.prototype.filter">
+        function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>filter
+        <span class="apidocSignatureSpan">(filter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filter = function (filter) {
+    this._errorList = this._errorList.filter(filter);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var file;
+
+    options = Object.create(options);
+    options.maxDepth = 1;
+    options.cwd = path.resolve(options.cwd);
+
+    do {
+file = patterns.<span class="apidocCodeKeywordSpan">filter</span>(function(pattern) {
+    var configPath = glob.sync(pattern, options)[0];
+
+    if (configPath) {
+        return fn(path.join(options.cwd, configPath));
+    }
+})[0];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.errors.prototype.getErrorCount" id="apidoc.element.jscs.errors.prototype.getErrorCount">
+        function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>getErrorCount
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getErrorCount = function () {
+    return this._errorList.length;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.errors.prototype.getErrorList" id="apidoc.element.jscs.errors.prototype.getErrorList">
+        function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>getErrorList
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getErrorList = function () {
+    return this._errorList;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.errors.prototype.getFilename" id="apidoc.element.jscs.errors.prototype.getFilename">
+        function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>getFilename
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFilename = function () {
+    return this._file.getFilename();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Adds parser error to error list.
+ *
+ * @param {Object} errorInfo
+ * @private
+ */
+_addParseError: function(errorInfo) {
+    this._errorList.push({
+        filename: this._file.<span class="apidocCodeKeywordSpan">getFilename</span>(),
+        rule: &#x27;parseError&#x27;,
+        message: errorInfo.message,
+        line: errorInfo.loc ? errorInfo.loc.line : 1,
+        column: errorInfo.loc ? errorInfo.loc.column : 0
+    });
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.errors.prototype.getValidationErrorCount" id="apidoc.element.jscs.errors.prototype.getValidationErrorCount">
+        function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>getValidationErrorCount
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getValidationErrorCount = function () {
+    return this._errorList.filter(function(error) {
+        return error.rule !== &#x27;parseError&#x27; &#x26;&#x26; error.rule !== &#x27;internalError&#x27;;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.errors.prototype.isEmpty" id="apidoc.element.jscs.errors.prototype.isEmpty">
+        function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>isEmpty
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isEmpty = function () {
+    return this._errorList.length === 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+checkerPromise.then(function(errorsCollection) {
+    reporter.writer(errorsCollection);
+    handleMaxErrors();
+
+    errorsCollection.forEach(function(errors) {
+        if (!errors.<span class="apidocCodeKeywordSpan">isEmpty</span>()) {
+            defer.reject(2);
+        }
+    });
+
+    defer.resolve(0);
+}).fail(function(e) {
+    console.error(e.stack);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.errors.prototype.setCurrentRule" id="apidoc.element.jscs.errors.prototype.setCurrentRule">
+        function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>setCurrentRule
+        <span class="apidocSignatureSpan">(rule)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setCurrentRule = function (rule) {
+    this._currentRule = rule;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.errors.prototype.stripErrorList" id="apidoc.element.jscs.errors.prototype.stripErrorList">
+        function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>stripErrorList
+        <span class="apidocSignatureSpan">(length)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stripErrorList = function (length) {
+    this._errorList.splice(length);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jscs.js_file" id="apidoc.module.jscs.js_file">module jscs.js_file</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.js_file" id="apidoc.element.jscs.js_file.js_file">
+        function <span class="apidocSignatureSpan">jscs.</span>js_file
+        <span class="apidocSignatureSpan">(params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">js_file = function (params) {
+    params = params || {};
+    this._parseErrors = [];
+    this._filename = params.filename;
+    this._source = params.source;
+
+    this._es3 = params.es3 || false;
+
+    this._lineBreaks = null;
+    this._lines = this._source.split(/\r\n|\r|\n/);
+
+    var parser = new Parser({
+        strictMode: false,
+        languageExtensions: {
+            gritDirectives: true,
+            appleInstrumentationDirectives: true
+        }
+    });
+
+    try {
+        this._program = parser.parse(this._source);
+    } catch (e) {
+        this._parseErrors.push(e);
+        this._program = new Program([
+            new Token(&#x27;EOF&#x27;, &#x27;&#x27;)
+        ]);
+    }
+
+    // Lazy initialization
+    this._scopes = null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jscs.js_file.prototype" id="apidoc.module.jscs.js_file.prototype">module jscs.js_file.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype._setTokenBefore" id="apidoc.element.jscs.js_file.prototype._setTokenBefore">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>_setTokenBefore
+        <span class="apidocSignatureSpan">(token, fragment)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_setTokenBefore = function (token, fragment) {
+    var parent = token;
+    var grandpa = parent.parentElement;
+
+    while (grandpa) {
+        try {
+            grandpa.insertChildBefore(fragment, parent);
+            break;
+        } catch (e) {}
+
+        parent = grandpa;
+        grandpa = parent.parentElement;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        return;
+    }
+
+    prevToken.parentElement.replaceChild(fragment, prevToken);
+    return;
+}
+
+this.<span class="apidocCodeKeywordSpan">_setTokenBefore</span>(token, fragment);
+    },
+
+    _setTokenBefore: function(token, fragment) {
+var parent = token;
+var grandpa = parent.parentElement;
+
+while (grandpa) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.findNextOperatorToken" id="apidoc.element.jscs.js_file.prototype.findNextOperatorToken">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>findNextOperatorToken
+        <span class="apidocSignatureSpan">(token, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findNextOperatorToken = function (token, value) {
+    return this.findNextToken(token, value in KEYWORD_OPERATORS ? &#x27;Keyword&#x27; : &#x27;Punctuator&#x27;, value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.findNextToken" id="apidoc.element.jscs.js_file.prototype.findNextToken">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>findNextToken
+        <span class="apidocSignatureSpan">(token, type, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findNextToken = function (token, type, value) {
+    var nextToken = token.getNextToken();
+
+    while (nextToken) {
+        if (nextToken.type === type &#x26;&#x26; (value === undefined || nextToken.value === value)) {
+            return nextToken;
+        }
+
+        nextToken = nextToken.getNextToken();
+    }
+    return nextToken;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Returns the first token after the given which matches type (and value).
+ *
+ * @param {Object} token
+ * @param {String} value
+ * @returns {Object|null}
+ */
+findNextOperatorToken: function(token, value) {
+    return this.<span class="apidocCodeKeywordSpan">findNextToken</span>(token, value in KEYWORD_OPERATORS ? &#x27;Keyword&#x27; : &#
+x27;Punctuator&#x27;, value);
+},
+
+/**
+ * Iterates through the token tree using tree iterator.
+ * Calls passed function for every token.
+ *
+ * @param {Function} cb
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.findPrevOperatorToken" id="apidoc.element.jscs.js_file.prototype.findPrevOperatorToken">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>findPrevOperatorToken
+        <span class="apidocSignatureSpan">(token, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findPrevOperatorToken = function (token, value) {
+    return this.findPrevToken(token, value in KEYWORD_OPERATORS ? &#x27;Keyword&#x27; : &#x27;Punctuator&#x27;, value);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.findPrevToken" id="apidoc.element.jscs.js_file.prototype.findPrevToken">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>findPrevToken
+        <span class="apidocSignatureSpan">(token, type, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findPrevToken = function (token, type, value) {
+    var prevToken = this.getPrevToken(token);
+    while (prevToken) {
+        if (prevToken.type === type &#x26;&#x26; (value === undefined || prevToken.value === value)) {
+            return prevToken;
+        }
+
+        prevToken = this.getPrevToken(prevToken);
+    }
+    return prevToken;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Returns the first token before the given which matches type (and value).
+ *
+ * @param {Object} token
+ * @param {String} value
+ * @returns {Object|null}
+ */
+findPrevOperatorToken: function(token, value) {
+    return this.<span class="apidocCodeKeywordSpan">findPrevToken</span>(token, value in KEYWORD_OPERATORS ? &#x27;Keyword&#x27; : &#
+x27;Punctuator&#x27;, value);
+},
+
+/**
+ * Returns the first token after the given which matches type (and value).
+ *
+ * @param {Object} token
+ * @param {String} value
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getComments" id="apidoc.element.jscs.js_file.prototype.getComments">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getComments
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getComments = function () {
+    var comments = [];
+    var token = this._program.getFirstToken();
+    while (token) {
+        if (token.isComment) {
+            comments[comments.length] = token;
+        }
+        token = token.getNextToken();
+    }
+    return comments;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+     * Returns array of source lines for the file with comments removed.
+     *
+     * @returns {Array}
+     */
+    getLinesWithCommentsRemoved: function() {
+var lines = this.getLines().concat();
+
+this.<span class="apidocCodeKeywordSpan">getComments</span>().concat().reverse().forEach(function(comment) {
+    var loc = comment.getLoc();
+    var startLine = loc.start.line;
+    var startCol = loc.start.column;
+    var endLine = loc.end.line;
+    var endCol = loc.end.column;
+    var i = startLine - 1;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getDialect" id="apidoc.element.jscs.js_file.prototype.getDialect">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getDialect
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDialect = function () {
+    if (this._es3) {
+        return &#x27;es3&#x27;;
+    }
+
+    return &#x27;es6&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getDistanceBetween" id="apidoc.element.jscs.js_file.prototype.getDistanceBetween">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getDistanceBetween
+        <span class="apidocSignatureSpan">(tokenBefore, tokenAfter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getDistanceBetween = function (tokenBefore, tokenAfter) {
+    if (tokenBefore === tokenAfter) {
+        return 0;
+    }
+    tokenBefore = tokenBefore instanceof Token ? tokenBefore : tokenBefore.getLastToken();
+    tokenAfter = tokenAfter instanceof Token ? tokenAfter : tokenAfter.getFirstToken();
+    var currentToken = tokenBefore.getNextToken();
+    var distance = 0;
+    while (currentToken) {
+        if (currentToken === tokenAfter) {
+            break;
+        }
+
+        distance += currentToken.getSourceCodeLength();
+        currentToken = currentToken.getNextToken();
+    }
+    return distance;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        message: options.message,
+        element: token,
+        offset: token.getSourceCodeLength(),
+        fix: fixed ? fix : undefined
+    });
+}.bind(this);
+
+var spacesBetween = this._file.<span class="apidocCodeKeywordSpan">getDistanceBetween</span>(token, nextToken);
+
+if (atLeast !== undefined &#x26;&#x26; spacesBetween &#x3c; atLeast) {
+    emitError(&#x27;at least&#x27;, atLeast);
+    return true;
+}
+
+if (atMost !== undefined &#x26;&#x26; spacesBetween &#x3e; atMost) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getFilename" id="apidoc.element.jscs.js_file.prototype.getFilename">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getFilename
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFilename = function () {
+    return this._filename;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Adds parser error to error list.
+ *
+ * @param {Object} errorInfo
+ * @private
+ */
+_addParseError: function(errorInfo) {
+    this._errorList.push({
+        filename: this._file.<span class="apidocCodeKeywordSpan">getFilename</span>(),
+        rule: &#x27;parseError&#x27;,
+        message: errorInfo.message,
+        line: errorInfo.loc ? errorInfo.loc.line : 1,
+        column: errorInfo.loc ? errorInfo.loc.column : 0
+    });
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getFirstNodeToken" id="apidoc.element.jscs.js_file.prototype.getFirstNodeToken">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getFirstNodeToken
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFirstNodeToken = function (node) {
+    return node.getFirstToken();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getFirstToken" id="apidoc.element.jscs.js_file.prototype.getFirstToken">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getFirstToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFirstToken = function () {
+    return this._program.getFirstToken();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Returns the first token for the node from the AST.
+ *
+ * @param {Object} node
+ * @returns {Object}
+ */
+getFirstNodeToken: function(node) {
+    return node.<span class="apidocCodeKeywordSpan">getFirstToken</span>();
+},
+
+/**
+ * Returns the last token for the node from the AST.
+ *
+ * @param {Object} node
+ * @returns {Object}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getFirstTokenOnLineWith" id="apidoc.element.jscs.js_file.prototype.getFirstTokenOnLineWith">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getFirstTokenOnLineWith
+        <span class="apidocSignatureSpan">(element, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFirstTokenOnLineWith = function (element, options) {
+    options = options || {};
+    var firstToken = element;
+
+    if (element.isComment &#x26;&#x26; !options.includeComments) {
+        firstToken = null;
+    }
+
+    if (element.isWhitespace &#x26;&#x26; !options.includeWhitespace) {
+        firstToken = null;
+    }
+
+    var currentToken = element.getPreviousToken();
+    while (currentToken) {
+        if (currentToken.isWhitespace) {
+            if (currentToken.getNewlineCount() &#x3e; 0 || !currentToken.getPreviousToken()) {
+                if (options.includeWhitespace) {
+                    firstToken = currentToken;
+                }
+                break;
+            }
+        } else if (currentToken.isComment) {
+            if (options.includeComments) {
+                firstToken = currentToken;
+                break;
+            }
+            if (currentToken.getNewlineCount() &#x3e; 0) {
+                break;
+            }
+        } else {
+            firstToken = currentToken;
+        }
+
+        currentToken = currentToken.getPreviousToken();
+    }
+
+    if (firstToken) {
+        return firstToken;
+    }
+
+    currentToken = element.getNextToken();
+    while (currentToken) {
+        if (currentToken.isWhitespace) {
+            if (currentToken.getNewlineCount() &#x3e; 0 || !currentToken.getNextToken()) {
+                if (options.includeWhitespace) {
+                    firstToken = currentToken;
+                }
+                break;
+            }
+        } else if (currentToken.isComment) {
+            if (options.includeComments) {
+                firstToken = currentToken;
+                break;
+            }
+            if (currentToken.getNewlineCount() &#x3e; 0) {
+                break;
+            }
+        } else {
+            firstToken = currentToken;
+        }
+
+        currentToken = currentToken.getNextToken();
+    }
+
+    return firstToken;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getLastNodeToken" id="apidoc.element.jscs.js_file.prototype.getLastNodeToken">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getLastNodeToken
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLastNodeToken = function (node) {
+    return node.getLastToken();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getLastToken" id="apidoc.element.jscs.js_file.prototype.getLastToken">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getLastToken
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLastToken = function () {
+    return this._program.getLastToken();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Returns the last token for the node from the AST.
+ *
+ * @param {Object} node
+ * @returns {Object}
+ */
+getLastNodeToken: function(node) {
+    return node.<span class="apidocCodeKeywordSpan">getLastToken</span>();
+},
+
+/**
+ * Returns the first token for the file.
+ *
+ * @param {Option} [options]
+ * @param {Boolean} [options.includeComments=false]
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getLastTokenOnLine" id="apidoc.element.jscs.js_file.prototype.getLastTokenOnLine">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getLastTokenOnLine
+        <span class="apidocSignatureSpan">(lineNumber, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLastTokenOnLine = function (lineNumber, options) {
+    options = options || {};
+
+    var loc;
+    var token = this._program.getLastToken();
+    var currentToken;
+
+    while (token) {
+        loc = token.getLoc();
+        currentToken = token;
+        token = token.getPreviousToken();
+
+        if (loc.start.line &#x3c;= lineNumber &#x26;&#x26; loc.end.line &#x3e;= lineNumber) {
+
+            // Since whitespace tokens can contain newlines we need to check
+            // if position is in the range, not exact match
+            if (currentToken.isWhitespace &#x26;&#x26; !options.includeWhitespace) {
+                continue;
+            }
+        }
+
+        if (loc.start.line === lineNumber || loc.end.line === lineNumber) {
+            if (currentToken.isComment &#x26;&#x26; !options.includeComments) {
+                continue;
+            }
+
+            return currentToken;
+        }
+    }
+
+    return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getLineBreakStyle" id="apidoc.element.jscs.js_file.prototype.getLineBreakStyle">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getLineBreakStyle
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLineBreakStyle = function () {
+    var lineBreaks = this.getLineBreaks();
+    return lineBreaks.length ? lineBreaks[0] : &#x27;\n&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Updates the whitespace of a line by passing split lines to a callback function
+ * for editing.
+ *
+ * @param {Object} token
+ * @param {Function} callback
+ */
+TokenAssert.prototype._updateWhitespaceByLine = function(token, callback) {
+    var lineBreak = this._file.<span class="apidocCodeKeywordSpan">getLineBreakStyle</span>();
+    var lines = this._file.getWhitespaceBefore(token).split(/\r\n|\r|\n/);
+
+    lines = callback(lines);
+    this._file.setWhitespaceBefore(token, lines.join(lineBreak));
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getLineBreaks" id="apidoc.element.jscs.js_file.prototype.getLineBreaks">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getLineBreaks
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLineBreaks = function () {
+    if (this._lineBreaks === null) {
+        this._lineBreaks = this._source.match(/\r\n|\r|\n/g) || [];
+    }
+    return this._lineBreaks;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Returns the first line break character encountered in the file.
+ * Assumes LF if the file is only one line.
+ *
+ * @returns {String}
+ */
+getLineBreakStyle: function() {
+    var lineBreaks = this.<span class="apidocCodeKeywordSpan">getLineBreaks</span>();
+    return lineBreaks.length ? lineBreaks[0] : &#x27;\n&#x27;;
+},
+
+/**
+ * Returns all line break characters from the file.
+ *
+ * @returns {String[]}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getLineCountBetween" id="apidoc.element.jscs.js_file.prototype.getLineCountBetween">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getLineCountBetween
+        <span class="apidocSignatureSpan">(tokenBefore, tokenAfter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLineCountBetween = function (tokenBefore, tokenAfter) {
+    if (tokenBefore === tokenAfter) {
+        return 0;
+    }
+    tokenBefore = tokenBefore instanceof Token ? tokenBefore : tokenBefore.getLastToken();
+    tokenAfter = tokenAfter instanceof Token ? tokenAfter : tokenAfter.getFirstToken();
+
+    var currentToken = tokenBefore.getNextToken();
+    var lineCount = 0;
+    while (currentToken) {
+        if (currentToken === tokenAfter) {
+            break;
+        }
+
+        lineCount += currentToken.getNewlineCount();
+        currentToken = currentToken.getNextToken();
+    }
+    return lineCount;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    this._validateOptions(options);
+
+    // Only attempt to remove or add lines if there are no comments between the two nodes
+    // as this prevents accidentally moving a valid token onto a line comment ed line
+    var fixed = !options.token.getNextNonWhitespaceToken().isComment;
+
+    var linesBetween = this._file.<span class="apidocCodeKeywordSpan">getLineCountBetween</span>(token, nextToken);
+
+    var emitError = function(countPrefix, lineCount) {
+var msgPrefix = token.value + &#x27; and &#x27; + nextToken.value;
+
+var fix = function() {
+    this._augmentLineCount(options, lineCount);
+}.bind(this);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getLines" id="apidoc.element.jscs.js_file.prototype.getLines">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getLines
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLines = function () {
+    return this._lines;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ *
+ * @param {Object} error
+ * @param {Boolean} [colorize = false]
+ * @returns {String}
+ */
+explainError: function(error, colorize) {
+    var lineNumber = error.line - 1;
+    var lines = this._file.<span class="apidocCodeKeywordSpan">getLines</span>();
+    var result = [
+        renderLine(lineNumber, lines[lineNumber], colorize),
+        renderPointer(error.column, colorize)
+    ];
+    var i = lineNumber - 1;
+    var linesAround = 2;
+    while (i &#x3e;= 0 &#x26;&#x26; i &#x3e;= (lineNumber - linesAround)) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getLinesWithCommentsRemoved" id="apidoc.element.jscs.js_file.prototype.getLinesWithCommentsRemoved">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getLinesWithCommentsRemoved
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLinesWithCommentsRemoved = function () {
+    var lines = this.getLines().concat();
+
+    this.getComments().concat().reverse().forEach(function(comment) {
+        var loc = comment.getLoc();
+        var startLine = loc.start.line;
+        var startCol = loc.start.column;
+        var endLine = loc.end.line;
+        var endCol = loc.end.column;
+        var i = startLine - 1;
+
+        if (startLine === endLine) {
+            // Remove tralling spaces (see gh-1968)
+            lines[i] = lines[i].replace(/\*\/\s+/, &#x27;\*\/&#x27;);
+            lines[i] = lines[i].substring(0, startCol) + lines[i].substring(endCol);
+        } else {
+            lines[i] = lines[i].substring(0, startCol);
+            for (var x = i + 1; x &#x3c; endLine - 1; x++) {
+                lines[x] = &#x27;&#x27;;
+            }
+
+            lines[x] = lines[x].substring(endCol);
+        }
+    });
+
+    return lines;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getNextToken" id="apidoc.element.jscs.js_file.prototype.getNextToken">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getNextToken
+        <span class="apidocSignatureSpan">(token, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getNextToken = function (token, options) {
+    if (options &#x26;&#x26; options.includeComments) {
+        return token.getNextNonWhitespaceToken();
+    } else {
+        return token.getNextCodeToken();
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+     *
+     * @param {Object} token
+     * @param {String} type
+     * @param {String} [value]
+     * @returns {Object|null}
+     */
+    findNextToken: function(token, type, value) {
+        var nextToken = token.<span class="apidocCodeKeywordSpan">getNextToken</span>();
+
+        while (nextToken) {
+if (nextToken.type === type &#x26;&#x26; (value === undefined || nextToken.value === value)) {
+    return nextToken;
+}
+
+nextToken = nextToken.getNextToken();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getNodesByType" id="apidoc.element.jscs.js_file.prototype.getNodesByType">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getNodesByType
+        <span class="apidocSignatureSpan">(type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getNodesByType = function (type) {
+    type = Array.isArray(type) ? type : [type];
+    var result = [];
+
+    for (var i = 0, l = type.length; i &#x3c; l; i++) {
+        var nodes = this._program.selectNodesByType(type[i]);
+
+        if (nodes) {
+            result = result.concat(nodes);
+        }
+    }
+
+    return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Calls passed function for every matched node.
+ *
+ * @param {String|String[]} type
+ * @param {Function} cb
+ * @param {Object} context
+ */
+iterateNodesByType: function(type, cb, context) {
+    return this.<span class="apidocCodeKeywordSpan">getNodesByType</span>(type).forEach(cb, context || this);
+},
+
+/**
+ * Iterates tokens by type(s) from the token array.
+ * Calls passed function for every matched token.
+ *
+ * @param {String|String[]} type
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getParseErrors" id="apidoc.element.jscs.js_file.prototype.getParseErrors">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getParseErrors
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getParseErrors = function () {
+    return this._parseErrors;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getPrevToken" id="apidoc.element.jscs.js_file.prototype.getPrevToken">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getPrevToken
+        <span class="apidocSignatureSpan">(token, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getPrevToken = function (token, options) {
+    if (options &#x26;&#x26; options.includeComments) {
+        return token.getPreviousNonWhitespaceToken();
+    }
+
+    return token.getPreviousCodeToken();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+     *
+     * @param {Object} token
+     * @param {String} type
+     * @param {String} [value]
+     * @returns {Object|null}
+     */
+    findPrevToken: function(token, type, value) {
+var prevToken = this.<span class="apidocCodeKeywordSpan">getPrevToken</span>(token);
+while (prevToken) {
+    if (prevToken.type === type &#x26;&#x26; (value === undefined || prevToken.value === value)) {
+        return prevToken;
+    }
+
+    prevToken = this.getPrevToken(prevToken);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getProgram" id="apidoc.element.jscs.js_file.prototype.getProgram">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getProgram
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getProgram = function () {
+    return this._program;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getScopes" id="apidoc.element.jscs.js_file.prototype.getScopes">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getScopes
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getScopes = function () {
+    if (!this._scopes) {
+        this._scopes = new ScopesApi(this._program);
+    }
+
+    return this._scopes;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getSource" id="apidoc.element.jscs.js_file.prototype.getSource">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getSource
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getSource = function () {
+    return this._source;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getTree" id="apidoc.element.jscs.js_file.prototype.getTree">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getTree
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getTree = function () {
+    return this._program || {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.getWhitespaceBefore" id="apidoc.element.jscs.js_file.prototype.getWhitespaceBefore">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>getWhitespaceBefore
+        <span class="apidocSignatureSpan">(token)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getWhitespaceBefore = function (token) {
+    if (!token.getPreviousToken) {
+        console.log(token);
+    }
+    var prev = token.getPreviousToken();
+
+    if (prev &#x26;&#x26; prev.isWhitespace) {
+        return prev.getSourceCode();
+    }
+
+    return &#x27;&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* for editing.
+*
+* @param {Object} token
+* @param {Function} callback
+*/
+TokenAssert.prototype._updateWhitespaceByLine = function(token, callback) {
+   var lineBreak = this._file.getLineBreakStyle();
+   var lines = this._file.<span class="apidocCodeKeywordSpan">getWhitespaceBefore</span>(token).split(/\r\n|\r|\n/);
+
+   lines = callback(lines);
+   this._file.setWhitespaceBefore(token, lines.join(lineBreak));
+};
+
+/**
+* Updates the whitespace of a line by passing split lines to a callback function
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.isOnTheSameLine" id="apidoc.element.jscs.js_file.prototype.isOnTheSameLine">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>isOnTheSameLine
+        <span class="apidocSignatureSpan">(tokenBefore, tokenAfter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isOnTheSameLine = function (tokenBefore, tokenAfter) {
+    if (tokenBefore === tokenAfter) {
+        return true;
+    }
+    tokenBefore = tokenBefore instanceof Token ? tokenBefore : tokenBefore.getLastToken();
+    tokenAfter = tokenAfter instanceof Token ? tokenAfter : tokenAfter.getFirstToken();
+    var currentToken = tokenBefore;
+    while (currentToken) {
+        if (currentToken === tokenAfter) {
+            return true;
+        }
+        if (currentToken !== tokenBefore &#x26;&#x26; currentToken.getNewlineCount() &#x3e; 0) {
+            return false;
+        }
+        currentToken = currentToken.getNextToken();
+    }
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if (!token || !nextToken) {
+    return false;
+}
+
+this._validateOptions(options);
+
+if (!options.disallowNewLine &#x26;&#x26; !this._file.<span class="apidocCodeKeywordSpan">isOnTheSameLine</span>(token, nextToken
+)) {
+    return false;
+}
+
+// Only attempt to remove or add lines if there are no comments between the two nodes
+// as this prevents accidentally moving a valid token onto a line comment ed line
+var fixed = !options.token.getNextNonWhitespaceToken().isComment;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.iterate" id="apidoc.element.jscs.js_file.prototype.iterate">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>iterate
+        <span class="apidocSignatureSpan">(cb, tree)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">iterate = function (cb, tree) {
+    return treeIterator.iterate(tree || this._program, cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Iterates through the token tree using tree iterator.
+ * Calls passed function for every token.
+ *
+ * @param {Function} cb
+ * @param {Object} [tree]
+ */
+iterate: function(cb, tree) {
+    return treeIterator.<span class="apidocCodeKeywordSpan">iterate</span>(tree || this._program, cb);
+},
+
+/**
+ * Returns nodes by type(s) from earlier built index.
+ *
+ * @param {String|String[]} type
+ * @returns {Object[]}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.iterateNodesByType" id="apidoc.element.jscs.js_file.prototype.iterateNodesByType">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>iterateNodesByType
+        <span class="apidocSignatureSpan">(type, cb, context)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">iterateNodesByType = function (type, cb, context) {
+    return this.getNodesByType(type).forEach(cb, context || this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.iterateTokensByType" id="apidoc.element.jscs.js_file.prototype.iterateTokensByType">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>iterateTokensByType
+        <span class="apidocSignatureSpan">(type, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">iterateTokensByType = function (type, cb) {
+    var tokens;
+
+    if (Array.isArray(type)) {
+        tokens = [];
+        for (var i = 0; i &#x3c; type.length; i++) {
+            var items = this._program.selectTokensByType(type[i]);
+            tokens = tokens.concat(items);
+        }
+    } else {
+        tokens = this._program.selectTokensByType(type);
+    }
+
+    tokens.forEach(cb);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+iterateTokensByTypeAndValue: function(type, value, cb) {
+    var values = (typeof value === &#x27;string&#x27;) ? [value] : value;
+    var valueIndex = {};
+    values.forEach(function(type) {
+        valueIndex[type] = true;
+    });
+
+    this.<span class="apidocCodeKeywordSpan">iterateTokensByType</span>(type, function(token) {
+        if (valueIndex[token.value]) {
+            cb(token);
+        }
+    });
+},
+
+getFirstTokenOnLineWith: function(element, options) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.iterateTokensByTypeAndValue" id="apidoc.element.jscs.js_file.prototype.iterateTokensByTypeAndValue">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>iterateTokensByTypeAndValue
+        <span class="apidocSignatureSpan">(type, value, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">iterateTokensByTypeAndValue = function (type, value, cb) {
+    var values = (typeof value === &#x27;string&#x27;) ? [value] : value;
+    var valueIndex = {};
+    values.forEach(function(type) {
+        valueIndex[type] = true;
+    });
+
+    this.iterateTokensByType(type, function(token) {
+        if (valueIndex[token.value]) {
+            cb(token);
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.render" id="apidoc.element.jscs.js_file.prototype.render">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>render
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">render = function () {
+    return this._program.getSourceCode();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.js_file.prototype.setWhitespaceBefore" id="apidoc.element.jscs.js_file.prototype.setWhitespaceBefore">
+        function <span class="apidocSignatureSpan">jscs.js_file.prototype.</span>setWhitespaceBefore
+        <span class="apidocSignatureSpan">(token, whitespace)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setWhitespaceBefore = function (token, whitespace) {
+    var prevToken = token.getPreviousToken();
+    var ws = new Token(&#x27;Whitespace&#x27;, whitespace);
+    var fragment = new Fragment(ws);
+
+    if (prevToken &#x26;&#x26; prevToken.isWhitespace) {
+        if (whitespace === &#x27;&#x27;) {
+            prevToken.remove();
+            return;
+        }
+
+        prevToken.parentElement.replaceChild(fragment, prevToken);
+        return;
+    }
+
+    this._setTokenBefore(token, fragment);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    // Only attempt to remove or add lines if there are no comments between the two nodes
+    // as this prevents accidentally moving a valid token onto a line comment ed line
+    var fixed = !options.token.getNextNonWhitespaceToken().isComment;
+
+    var emitError = function(countPrefix, spaceCount) {
+var fix = function() {
+    this._file.<span class="apidocCodeKeywordSpan">setWhitespaceBefore</span>(nextToken, new Array(spaceCount + 1).join(&#x27; &#
+x27;));
+}.bind(this);
+
+var msgPostfix = token.value + &#x27; and &#x27; + nextToken.value;
+
+if (!options.message) {
+    if (exactly === 0) {
+        // support noWhitespaceBetween
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jscs.super_" id="apidoc.module.jscs.super_">module jscs.super_</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.super_.super_" id="apidoc.element.jscs.super_.super_">
+        function <span class="apidocSignatureSpan">jscs.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">super_ = function () {
+    this._configuredRules = [];
+
+    this._errorsFound = 0;
+    this._maxErrorsExceeded = false;
+
+    this._configuration = this._createConfiguration();
+    this._configuration.registerDefaultPresets();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jscs.super_.prototype" id="apidoc.module.jscs.super_.prototype">module jscs.super_.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.super_.prototype._addParseError" id="apidoc.element.jscs.super_.prototype._addParseError">
+        function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>_addParseError
+        <span class="apidocSignatureSpan">(errors, parseError, file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_addParseError = function (errors, parseError, file) {
+    if (this._maxErrorsExceeded) {
+        return;
+    }
+
+    errors.add(parseError, file.getProgram());
+
+    if (this.maxErrorsEnabled()) {
+        this._errorsFound += 1;
+        this._maxErrorsExceeded = this._errorsFound &#x3e;= this._maxErrors;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+     *
+     * @param {String | Error} message
+     * @param {cst.types.Element} element
+     * @param {Number} [offset] relative offset
+     */
+    add: function(message, element, offset) {
+if (message instanceof Error) {
+    this.<span class="apidocCodeKeywordSpan">_addParseError</span>(message);
+    return;
+}
+
+this._addError({
+    message: message,
+    element: element,
+    offset: offset
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.super_.prototype._checkJsFile" id="apidoc.element.jscs.super_.prototype._checkJsFile">
+        function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>_checkJsFile
+        <span class="apidocSignatureSpan">(file, errors)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_checkJsFile = function (file, errors) {
+    if (this._maxErrorsExceeded) {
+        return;
+    }
+
+    var errorFilter = this._configuration.getErrorFilter();
+
+    this._configuredRules.forEach(function(rule) {
+        errors.setCurrentRule(rule.getOptionName());
+
+        try {
+            rule.check(file, errors);
+        } catch (e) {
+            errors.setCurrentRule(&#x27;internalError&#x27;);
+            errors.add(getInternalErrorMessage(rule.getOptionName(), e), file.getProgram());
+        }
+    }, this);
+
+    this._configuration.getUnsupportedRuleNames().forEach(function(rulename) {
+        errors.add(&#x27;Unsupported rule: &#x27; + rulename, file.getProgram());
+    });
+
+    var program = file.getProgram();
+    var tokenIndex = new TokenIndex(program.getFirstToken());
+    errors.calculateErrorLocations(tokenIndex);
+    errors.filter(function(error) {
+        if (error.element) {
+            return tokenIndex.isRuleEnabled(error.rule, error.element);
+        } else {
+            return true;
+        }
+    });
+
+    // sort errors list to show errors as they appear in source
+    errors.getErrorList().sort(function(a, b) {
+        return (a.line - b.line) || (a.column - b.column);
+    });
+
+    if (errorFilter) {
+        errors.filter(errorFilter);
+    }
+
+    if (this.maxErrorsEnabled()) {
+        if (this._maxErrors === -1 || this._maxErrors === null) {
+            this._maxErrorsExceeded = false;
+
+        } else {
+            this._maxErrorsExceeded = this._errorsFound + errors.getErrorCount() &#x3e; this._maxErrors;
+            errors.stripErrorList(Math.max(0, this._maxErrors - this._errorsFound));
+        }
+    }
+
+    this._errorsFound += errors.getErrorCount();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.super_.prototype._createConfiguration" id="apidoc.element.jscs.super_.prototype._createConfiguration">
+        function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>_createConfiguration
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_createConfiguration = function () {
+    return new Configuration();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.super_.prototype._createJsFileInstance" id="apidoc.element.jscs.super_.prototype._createJsFileInstance">
+        function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>_createJsFileInstance
+        <span class="apidocSignatureSpan">(filename, source)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_createJsFileInstance = function (filename, source) {
+    return new JsFile({
+        filename: filename,
+        source: source,
+        es3: this._configuration.isES3Enabled()
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.super_.prototype._fixCommonError" id="apidoc.element.jscs.super_.prototype._fixCommonError">
+        function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>_fixCommonError
+        <span class="apidocSignatureSpan">(error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_fixCommonError = function (error) {
+    if (error.fix) {
+        // &#x22;error.fixed = true&#x22; should go first, so rule can
+        // decide for itself (with &#x22;error.fixed = false&#x22;)
+        // if it can fix this particular error
+        error.fixed = true;
+        error.fix();
+    }
+
+    return !!error.fixed;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.super_.prototype._fixJsFile" id="apidoc.element.jscs.super_.prototype._fixJsFile">
+        function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>_fixJsFile
+        <span class="apidocSignatureSpan">(file, errors)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_fixJsFile = function (file, errors) {
+    errors.getErrorList().forEach(function(error) {
+        if (error.fixed) {
+            return;
+        }
+
+        try {
+            // Try to apply fixes for common errors
+            var isFixed = this._fixCommonError(error);
+
+            // Apply specific fix
+            if (!isFixed) {
+                this._fixSpecificError(file, error);
+            }
+        } catch (e) {
+            error.fixed = false;
+            errors.add(
+                getInternalErrorMessage(error.rule, e),
+                file.getProgram()
+            );
+        }
+    }, this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.super_.prototype._fixSpecificError" id="apidoc.element.jscs.super_.prototype._fixSpecificError">
+        function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>_fixSpecificError
+        <span class="apidocSignatureSpan">(file, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_fixSpecificError = function (file, error) {
+    var configuration = this.getConfiguration();
+    var instance = configuration.getConfiguredRule(error.rule);
+
+    if (instance &#x26;&#x26; instance._fix) {
+        // &#x22;error.fixed = true&#x22; should go first, so rule can
+        // decide for itself (with &#x22;error.fixed = false&#x22;)
+        // if it can fix this particular error
+        error.fixed = true;
+        instance._fix(file, error);
+    }
+
+    return !!error.fixed;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.super_.prototype.checkString" id="apidoc.element.jscs.super_.prototype.checkString">
+        function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>checkString
+        <span class="apidocSignatureSpan">(source, filename)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">checkString = function (source, filename) {
+    filename = filename || &#x27;input&#x27;;
+
+    var file = this._createJsFileInstance(filename, source);
+
+    var errors = new Errors(file);
+
+    file.getParseErrors().forEach(function(parseError) {
+        if (!this._maxErrorsExceeded) {
+            this._addParseError(errors, parseError, file);
+        }
+    }, this);
+
+    if (!file._program || file._program.firstChild.type === &#x27;EOF&#x27;) {
+        return errors;
+    }
+
+    this._checkJsFile(file, errors);
+
+    return errors;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.super_.prototype.configure" id="apidoc.element.jscs.super_.prototype.configure">
+        function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>configure
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">configure = function (config) {
+    this._configuration.load(config);
+
+    this._configuredRules = this._configuration.getConfiguredRules();
+    this._maxErrors = this._configuration.getMaxErrors();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    program.maxErrors = Infinity;
+}
+
+checker.getConfiguration().overrideFromCLI(program);
+checker.getConfiguration().registerDefaultRules();
+
+try {
+    checker.<span class="apidocCodeKeywordSpan">configure</span>(config);
+} catch (e) {
+    console.error(e.message);
+    defer.reject(1);
+
+    return returnArgs;
+}
+if (program.autoConfigure) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.super_.prototype.fixString" id="apidoc.element.jscs.super_.prototype.fixString">
+        function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>fixString
+        <span class="apidocSignatureSpan">(source, filename)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fixString = function (source, filename) {
+    filename = filename || &#x27;input&#x27;;
+
+    var file = this._createJsFileInstance(filename, source);
+    var errors = new Errors(file);
+
+    var parseErrors = file.getParseErrors();
+    if (parseErrors.length &#x3e; 0) {
+        parseErrors.forEach(function(parseError) {
+            this._addParseError(errors, parseError, file);
+        }, this);
+
+        return {output: source, errors: errors};
+    } else {
+        var attempt = 0;
+        do {
+
+            // Fill in errors list
+            this._checkJsFile(file, errors);
+
+            // Apply fixes
+            this._fixJsFile(file, errors);
+
+            var hasFixes = errors.getErrorList().some(function(err) {
+                return err.fixed;
+            });
+
+            if (!hasFixes) {
+                break;
+            }
+
+            file = this._createJsFileInstance(filename, file.render());
+            errors = new Errors(file);
+            attempt++;
+        } while (attempt &#x3c; MAX_FIX_ATTEMPTS);
+
+        return {output: file.getSource(), errors: errors};
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.super_.prototype.getConfiguration" id="apidoc.element.jscs.super_.prototype.getConfiguration">
+        function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>getConfiguration
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getConfiguration = function () {
+    return this._configuration;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+// To run autoconfigure over all errors in the path
+if (program.autoConfigure) {
+    program.maxErrors = Infinity;
+}
+
+checker.<span class="apidocCodeKeywordSpan">getConfiguration</span>().overrideFromCLI(program);
+checker.getConfiguration().registerDefaultRules();
+
+try {
+    checker.configure(config);
+} catch (e) {
+    console.error(e.message);
+    defer.reject(1);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.super_.prototype.getProcessedConfig" id="apidoc.element.jscs.super_.prototype.getProcessedConfig">
+        function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>getProcessedConfig
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getProcessedConfig = function () {
+    return this._configuration.getProcessedConfig();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.super_.prototype.maxErrorsEnabled" id="apidoc.element.jscs.super_.prototype.maxErrorsEnabled">
+        function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>maxErrorsEnabled
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">maxErrorsEnabled = function () {
+    return this._maxErrors !== null &#x26;&#x26; this._maxErrors !== -1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.super_.prototype.maxErrorsExceeded" id="apidoc.element.jscs.super_.prototype.maxErrorsExceeded">
+        function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>maxErrorsExceeded
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">maxErrorsExceeded = function () {
+    return this._maxErrorsExceeded;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var returnArgs = {
+    checker: checker,
+    reporter: program.reporter,
+    promise: promise
+};
+
+function handleMaxErrors() {
+    if (checker.<span class="apidocCodeKeywordSpan">maxErrorsExceeded</span>()) {
+        console.error(&#x27;Too many errors... Increase `maxErrors` configuration option value to see more.&#x27;);
+    }
+}
+
+promise.always(function(status) {
+    exit(status.valueOf());
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.super_.prototype.registerDefaultRules" id="apidoc.element.jscs.super_.prototype.registerDefaultRules">
+        function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>registerDefaultRules
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">registerDefaultRules = function () {
+    this._configuration.registerDefaultRules();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// To run autoconfigure over all errors in the path
+if (program.autoConfigure) {
+    program.maxErrors = Infinity;
+}
+
+checker.getConfiguration().overrideFromCLI(program);
+checker.getConfiguration().<span class="apidocCodeKeywordSpan">registerDefaultRules</span>();
+
+try {
+    checker.configure(config);
+} catch (e) {
+    console.error(e.message);
+    defer.reject(1);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.super_.prototype.registerRule" id="apidoc.element.jscs.super_.prototype.registerRule">
+        function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>registerRule
+        <span class="apidocSignatureSpan">(rule)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">registerRule = function (rule) {
+    this._configuration.registerRule(rule);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jscs.token_assert" id="apidoc.module.jscs.token_assert">module jscs.token_assert</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.token_assert.token_assert" id="apidoc.element.jscs.token_assert.token_assert">
+        function <span class="apidocSignatureSpan">jscs.</span>token_assert
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function TokenAssert(file) {
+    EventEmitter.call(this);
+
+    this._file = file;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.token_assert.super_" id="apidoc.element.jscs.token_assert.super_">
+        function <span class="apidocSignatureSpan">jscs.token_assert.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jscs.token_assert.prototype" id="apidoc.module.jscs.token_assert.prototype">module jscs.token_assert.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.token_assert.prototype._augmentLineCount" id="apidoc.element.jscs.token_assert.prototype._augmentLineCount">
+        function <span class="apidocSignatureSpan">jscs.token_assert.prototype.</span>_augmentLineCount
+        <span class="apidocSignatureSpan">(options, lineCount)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_augmentLineCount = function (options, lineCount) {
+    var token = options.nextToken;
+    if (lineCount === 0) {
+        if (options.stickToPreviousToken) {
+            var nextToken = this._file.getNextToken(token, {
+                includeComments: true
+            });
+            this._file.setWhitespaceBefore(nextToken, this._file.getWhitespaceBefore(token));
+        }
+
+        this._file.setWhitespaceBefore(token, &#x27; &#x27;);
+        return;
+    }
+
+    this._updateWhitespaceByLine(token, function(lines) {
+        var currentLineCount = lines.length;
+        var lastLine = lines[lines.length - 1];
+
+        if (currentLineCount &#x3c;= lineCount) {
+            // add additional lines that maintain the same indentation as the former last line
+            for (; currentLineCount &#x3c;= lineCount; currentLineCount++) {
+                lines[lines.length - 1] = &#x27;&#x27;;
+                lines.push(lastLine);
+            }
+        } else {
+            // remove lines and then ensure that the new last line maintains the previous indentation
+            lines = lines.slice(0, lineCount + 1);
+            lines[lines.length - 1] = lastLine;
+        }
+
+        return lines;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    var linesBetween = this._file.getLineCountBetween(token, nextToken);
+
+    var emitError = function(countPrefix, lineCount) {
+var msgPrefix = token.value + &#x27; and &#x27; + nextToken.value;
+
+var fix = function() {
+    this.<span class="apidocCodeKeywordSpan">_augmentLineCount</span>(options, lineCount);
+}.bind(this);
+
+if (!options.message) {
+    if (exactly === 0) {
+        // support sameLine
+        options.message = msgPrefix + &#x27; should be on the same line&#x27;;
+    } else if (atLeast === 1 &#x26;&#x26; atMost === undefined) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.token_assert.prototype._updateCommentWhitespace" id="apidoc.element.jscs.token_assert.prototype._updateCommentWhitespace">
+        function <span class="apidocSignatureSpan">jscs.token_assert.prototype.</span>_updateCommentWhitespace
+        <span class="apidocSignatureSpan">(token, indentChar, actual, expected)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_updateCommentWhitespace = function (token, indentChar, actual, expected) {
+    var difference = expected - actual;
+    var tokenLines = token.value.split(/\r\n|\r|\n/);
+    var i = 1;
+    if (difference &#x3e;= 0) {
+        var lineWhitespace = (new Array(difference + 1)).join(indentChar);
+        for (; i &#x3c; tokenLines.length; i++) {
+            tokenLines[i] = tokenLines[i] === &#x27;&#x27; ? &#x27;&#x27; : lineWhitespace + tokenLines[i];
+        }
+    } else {
+        for (; i &#x3c; tokenLines.length; i++) {
+            tokenLines[i] = tokenLines[i].substring(-difference);
+        }
+    }
+
+    var newComment = new Token(&#x27;CommentBlock&#x27;, tokenLines.join(this._file.getLineBreakStyle()));
+    token.parentElement.replaceChild(newComment, token);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+            this._updateWhitespaceByLine(token, function(lines) {
+                lines[lines.length - 1] = newWhitespace;
+                return lines;
+            });
+
+            if (token.isComment) {
+                this.<span class="apidocCodeKeywordSpan">_updateCommentWhitespace</span>(token, indentChar, actual, expected);
+            }
+        }.bind(this)
+    });
+
+    return true;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.token_assert.prototype._updateWhitespaceByLine" id="apidoc.element.jscs.token_assert.prototype._updateWhitespaceByLine">
+        function <span class="apidocSignatureSpan">jscs.token_assert.prototype.</span>_updateWhitespaceByLine
+        <span class="apidocSignatureSpan">(token, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_updateWhitespaceByLine = function (token, callback) {
+    var lineBreak = this._file.getLineBreakStyle();
+    var lines = this._file.getWhitespaceBefore(token).split(/\r\n|\r|\n/);
+
+    lines = callback(lines);
+    this._file.setWhitespaceBefore(token, lines.join(lineBreak));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this.emit(&#x27;error&#x27;, {
+        message: &#x27;Expected indentation of &#x27; + expected + &#x27; characters&#x27;,
+        line: lineNumber,
+        column: expected,
+        fix: function() {
+var newWhitespace = (new Array(expected + 1)).join(indentChar);
+
+this.<span class="apidocCodeKeywordSpan">_updateWhitespaceByLine</span>(token, function(lines) {
+    lines[lines.length - 1] = newWhitespace;
+    return lines;
+});
+
+if (token.isComment) {
+    this._updateCommentWhitespace(token, indentChar, actual, expected);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.token_assert.prototype._validateOptions" id="apidoc.element.jscs.token_assert.prototype._validateOptions">
+        function <span class="apidocSignatureSpan">jscs.token_assert.prototype.</span>_validateOptions
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_validateOptions = function (options) {
+    var token = options.token;
+    var nextToken = options.nextToken;
+    var atLeast = options.atLeast;
+    var atMost = options.atMost;
+    var exactly = options.exactly;
+
+    if (token === nextToken) {
+        throw new Error(&#x27;You cannot specify the same token as both token and nextToken&#x27;);
+    }
+
+    if (atLeast === undefined &#x26;&#x26;
+        atMost === undefined &#x26;&#x26;
+        exactly === undefined) {
+        throw new Error(&#x27;You must specify at least one option&#x27;);
+    }
+
+    if (exactly !== undefined &#x26;&#x26; (atLeast !== undefined || atMost !== undefined)) {
+        throw new Error(&#x27;You cannot specify atLeast or atMost with exactly&#x27;);
+    }
+
+    if (atLeast !== undefined &#x26;&#x26; atMost !== undefined &#x26;&#x26; atMost &#x3c; atLeast) {
+        throw new Error(&#x27;atLeast and atMost are in conflict&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var atMost = options.atMost;
+var exactly = options.exactly;
+
+if (!token || !nextToken) {
+    return false;
+}
+
+this.<span class="apidocCodeKeywordSpan">_validateOptions</span>(options);
+
+if (!options.disallowNewLine &#x26;&#x26; !this._file.isOnTheSameLine(token, nextToken)) {
+    return false;
+}
+
+// Only attempt to remove or add lines if there are no comments between the two nodes
+// as this prevents accidentally moving a valid token onto a line comment ed line
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.token_assert.prototype.differentLine" id="apidoc.element.jscs.token_assert.prototype.differentLine">
+        function <span class="apidocSignatureSpan">jscs.token_assert.prototype.</span>differentLine
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">differentLine = function (options) {
+    options.atLeast = 1;
+
+    return this.linesBetween(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.token_assert.prototype.indentation" id="apidoc.element.jscs.token_assert.prototype.indentation">
+        function <span class="apidocSignatureSpan">jscs.token_assert.prototype.</span>indentation
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">indentation = function (options) {
+    var token = options.token;
+    var lineNumber = options.lineNumber;
+    var actual = options.actual;
+    var expected = options.expected;
+    var indentChar = options.indentChar;
+
+    if (actual === expected) {
+        return false;
+    }
+
+    this.emit(&#x27;error&#x27;, {
+        message: &#x27;Expected indentation of &#x27; + expected + &#x27; characters&#x27;,
+        line: lineNumber,
+        column: expected,
+        fix: function() {
+            var newWhitespace = (new Array(expected + 1)).join(indentChar);
+
+            this._updateWhitespaceByLine(token, function(lines) {
+                lines[lines.length - 1] = newWhitespace;
+                return lines;
+            });
+
+            if (token.isComment) {
+                this._updateCommentWhitespace(token, indentChar, actual, expected);
+            }
+        }.bind(this)
+    });
+
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.token_assert.prototype.linesBetween" id="apidoc.element.jscs.token_assert.prototype.linesBetween">
+        function <span class="apidocSignatureSpan">jscs.token_assert.prototype.</span>linesBetween
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">linesBetween = function (options) {
+    var token = options.token;
+    var nextToken = options.nextToken;
+    var atLeast = options.atLeast;
+    var atMost = options.atMost;
+    var exactly = options.exactly;
+
+    if (!token || !nextToken) {
+        return false;
+    }
+
+    this._validateOptions(options);
+
+    // Only attempt to remove or add lines if there are no comments between the two nodes
+    // as this prevents accidentally moving a valid token onto a line comment ed line
+    var fixed = !options.token.getNextNonWhitespaceToken().isComment;
+
+    var linesBetween = this._file.getLineCountBetween(token, nextToken);
+
+    var emitError = function(countPrefix, lineCount) {
+        var msgPrefix = token.value + &#x27; and &#x27; + nextToken.value;
+
+        var fix = function() {
+            this._augmentLineCount(options, lineCount);
+        }.bind(this);
+
+        if (!options.message) {
+            if (exactly === 0) {
+                // support sameLine
+                options.message = msgPrefix + &#x27; should be on the same line&#x27;;
+            } else if (atLeast === 1 &#x26;&#x26; atMost === undefined) {
+                // support differentLine
+                options.message = msgPrefix + &#x27; should be on different lines&#x27;;
+            } else {
+                // support linesBetween
+                options.message = msgPrefix + &#x27; should have &#x27; + countPrefix + &#x27; &#x27; + lineCount + &#x27; line(s) between them&#x27;;
+            }
+        }
+
+        this.emit(&#x27;error&#x27;, {
+            message: options.message,
+            element: token,
+            offset: token.getSourceCodeLength(),
+            fix: fixed ? fix : undefined
+        });
+    }.bind(this);
+
+    if (atLeast !== undefined &#x26;&#x26; linesBetween &#x3c; atLeast) {
+        emitError(&#x27;at least&#x27;, atLeast);
+        return true;
+    }
+
+    if (atMost !== undefined &#x26;&#x26; linesBetween &#x3e; atMost) {
+        emitError(&#x27;at most&#x27;, atMost);
+        return true;
+    }
+
+    if (exactly !== undefined &#x26;&#x26; linesBetween !== exactly) {
+        emitError(&#x27;exactly&#x27;, exactly);
+        return true;
+    }
+
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {Boolean} [options.stickToPreviousToken]
+* @param {String} [options.message]
+* @return {Boolean} whether an error was found
+*/
+TokenAssert.prototype.sameLine = function(options) {
+   options.exactly = 0;
+
+   return this.<span class="apidocCodeKeywordSpan">linesBetween</span>(options);
+};
+
+/**
+* Requires tokens to be on different lines.
+*
+* @param {Object} options
+* @param {Object} options.token
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.token_assert.prototype.noWhitespaceBetween" id="apidoc.element.jscs.token_assert.prototype.noWhitespaceBetween">
+        function <span class="apidocSignatureSpan">jscs.token_assert.prototype.</span>noWhitespaceBetween
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">noWhitespaceBetween = function (options) {
+    options.exactly = 0;
+    return this.spacesBetween(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.token_assert.prototype.sameLine" id="apidoc.element.jscs.token_assert.prototype.sameLine">
+        function <span class="apidocSignatureSpan">jscs.token_assert.prototype.</span>sameLine
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sameLine = function (options) {
+    options.exactly = 0;
+
+    return this.linesBetween(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.token_assert.prototype.spacesBetween" id="apidoc.element.jscs.token_assert.prototype.spacesBetween">
+        function <span class="apidocSignatureSpan">jscs.token_assert.prototype.</span>spacesBetween
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">spacesBetween = function (options) {
+    var token = options.token;
+    var nextToken = options.nextToken;
+    var atLeast = options.atLeast;
+    var atMost = options.atMost;
+    var exactly = options.exactly;
+
+    if (!token || !nextToken) {
+        return false;
+    }
+
+    this._validateOptions(options);
+
+    if (!options.disallowNewLine &#x26;&#x26; !this._file.isOnTheSameLine(token, nextToken)) {
+        return false;
+    }
+
+    // Only attempt to remove or add lines if there are no comments between the two nodes
+    // as this prevents accidentally moving a valid token onto a line comment ed line
+    var fixed = !options.token.getNextNonWhitespaceToken().isComment;
+
+    var emitError = function(countPrefix, spaceCount) {
+        var fix = function() {
+            this._file.setWhitespaceBefore(nextToken, new Array(spaceCount + 1).join(&#x27; &#x27;));
+        }.bind(this);
+
+        var msgPostfix = token.value + &#x27; and &#x27; + nextToken.value;
+
+        if (!options.message) {
+            if (exactly === 0) {
+                // support noWhitespaceBetween
+                options.message = &#x27;Unexpected whitespace between &#x27; + msgPostfix;
+            } else if (exactly !== undefined) {
+                // support whitespaceBetween (spaces option)
+                options.message = spaceCount + &#x27; spaces required between &#x27; + msgPostfix;
+            } else if (atLeast === 1 &#x26;&#x26; atMost === undefined) {
+                // support whitespaceBetween (no spaces option)
+                options.message = &#x27;Missing space between &#x27; + msgPostfix;
+            } else {
+                options.message = countPrefix + &#x27; &#x27; + spaceCount + &#x27; spaces required between &#x27; + msgPostfix;
+            }
+        }
+
+        this.emit(&#x27;error&#x27;, {
+            message: options.message,
+            element: token,
+            offset: token.getSourceCodeLength(),
+            fix: fixed ? fix : undefined
+        });
+    }.bind(this);
+
+    var spacesBetween = this._file.getDistanceBetween(token, nextToken);
+
+    if (atLeast !== undefined &#x26;&#x26; spacesBetween &#x3c; atLeast) {
+        emitError(&#x27;at least&#x27;, atLeast);
+        return true;
+    }
+
+    if (atMost !== undefined &#x26;&#x26; spacesBetween &#x3e; atMost) {
+        emitError(&#x27;at most&#x27;, atMost);
+        return true;
+    }
+
+    if (exactly !== undefined &#x26;&#x26; spacesBetween !== exactly) {
+        emitError(&#x27;exactly&#x27;, exactly);
+        return true;
+    }
+
+    return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {Object} options.nextToken
+* @param {String} [options.message]
+* @param {Number} [options.spaces] Amount of spaces between tokens.
+* @return {Boolean} whether an error was found
+*/
+TokenAssert.prototype.whitespaceBetween = function(options) {
+   options.atLeast = 1;
+   return this.<span class="apidocCodeKeywordSpan">spacesBetween</span>(options);
+};
+
+/**
+* Requires to have no whitespace between specified tokens.
+*
+* @param {Object} options
+* @param {Object} options.token
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.token_assert.prototype.whitespaceBetween" id="apidoc.element.jscs.token_assert.prototype.whitespaceBetween">
+        function <span class="apidocSignatureSpan">jscs.token_assert.prototype.</span>whitespaceBetween
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">whitespaceBetween = function (options) {
+    options.atLeast = 1;
+    return this.spacesBetween(options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jscs.token_categorizer" id="apidoc.module.jscs.token_categorizer">module jscs.token_categorizer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.token_categorizer.categorizeCloseParen" id="apidoc.element.jscs.token_categorizer.categorizeCloseParen">
+        function <span class="apidocSignatureSpan">jscs.token_categorizer.</span>categorizeCloseParen
+        <span class="apidocSignatureSpan">(token)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">categorizeCloseParen = function (token) {
+    assert(token.value === &#x27;)&#x27;, &#x27;Input token must be a parenthesis&#x27;);
+    var node = token.parentElement;
+    var nodeType = node.type;
+    var nextToken = token.getNextCodeToken();
+
+    // Terminal statement
+    if (nextToken.type === &#x27;EOF&#x27;) {
+        switch (nodeType) {
+            case &#x27;DoWhileStatement&#x27;:
+                return &#x27;Statement&#x27;;
+            case &#x27;CallExpression&#x27;:
+            case &#x27;NewExpression&#x27;:
+                return &#x27;CallExpression&#x27;;
+            default:
+                return &#x27;ParenthesizedExpression&#x27;;
+        }
+    }
+
+    // Part of a parentheses-bearing statement (if, with, while, switch, etc.)
+    if (PAREN_KEYWORD_TYPE_RE.test(nodeType) &#x26;&#x26; !NO_PAREN_KEYWORD_TYPE_RE.test(nodeType)) {
+        // Closing parentheses for `switch` and `catch` must be followed by &#x22;{&#x22;
+        // Closing parentheses for `do..while` may be the last punctuation inside a block
+        if (nextToken.value === &#x27;{&#x27; || nextToken.value === &#x27;}&#x27;) {
+            return &#x27;Statement&#x27;;
+        }
+
+        // Closing parentheses for other statements must be followed by a statement or declaration
+        var nextNode = nextToken.parentElement;
+        while (!nodeContains(nextNode, token)) {
+            if (QUASI_STATEMENT_TYPE_RE.test(nextNode.type)) {
+                return &#x27;Statement&#x27;;
+            }
+            nextNode = nextNode.parentElement;
+        }
+    }
+
+    // Part of a function definition (declaration, expression, method, etc.)
+    if (nextToken.value === &#x27;{&#x27; &#x26;&#x26; FUNCTION_TYPE_RE.test(nodeType)) {
+        return &#x27;Function&#x27;;
+    }
+
+    // Part of a call expression
+    if ((nodeType === &#x27;CallExpression&#x27; || nodeType === &#x27;NewExpression&#x27;)) {
+        var openParen = node.callee.getNextToken();
+        if (openParen.parentElement === node &#x26;&#x26; node.lastChild === token) {
+            return &#x27;CallExpression&#x27;;
+        }
+    }
+
+    // All remaining cases are grouping parentheses
+    return &#x27;ParenthesizedExpression&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.token_categorizer.categorizeOpenParen" id="apidoc.element.jscs.token_categorizer.categorizeOpenParen">
+        function <span class="apidocSignatureSpan">jscs.token_categorizer.</span>categorizeOpenParen
+        <span class="apidocSignatureSpan">(token)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">categorizeOpenParen = function (token) {
+    assert(token.value === &#x27;(&#x27;, &#x27;Input token must be a parenthesis&#x27;);
+    var node = token.parentElement;
+    var nodeType = node.type;
+    var prevToken = token.getPreviousCodeToken();
+
+    // Outermost grouping parenthesis
+    if (!prevToken) {
+        return &#x27;ParenthesizedExpression&#x27;;
+    }
+
+    // Part of a parentheses-bearing statement (if, with, while, switch, etc.)
+    if (prevToken.type === &#x27;Keyword&#x27; &#x26;&#x26; PAREN_KEYWORD_TYPE_RE.test(nodeType) &#x26;&#x26;
+        !NO_PAREN_KEYWORD_TYPE_RE.test(nodeType)) {
+
+        return &#x27;Statement&#x27;;
+    }
+
+    // Part of a function definition (declaration, expression, method, etc.)
+    if (FUNCTION_TYPE_RE.test(nodeType) &#x26;&#x26;
+
+        // Name is optional for function expressions
+        (prevToken.type === &#x27;Identifier&#x27; || prevToken.value === &#x27;function&#x27;)) {
+
+        return &#x27;Function&#x27;;
+    }
+
+    // Part of a call expression
+    var prevNode = prevToken.parentElement;
+    if ((nodeType === &#x27;CallExpression&#x27; || nodeType === &#x27;NewExpression&#x27;) &#x26;&#x26;
+
+        // Must not be inside an arguments list or other grouping parentheses
+        prevToken.value !== &#x27;,&#x27; &#x26;&#x26; prevToken.value !== &#x27;(&#x27; &#x26;&#x26;
+
+        // If the callee is parenthesized (e.g., `(foo.bar)()`), prevNode will match node
+        // Otherwise (e.g., `foo.bar()`), prevToken must be the last token of the callee node
+        (prevNode === node || prevToken === node.callee.getLastToken())) {
+
+        return &#x27;CallExpression&#x27;;
+    }
+
+    // All remaining cases are grouping parentheses
+    return &#x27;ParenthesizedExpression&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jscs.token_index" id="apidoc.module.jscs.token_index">module jscs.token_index</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.token_index.token_index" id="apidoc.element.jscs.token_index.token_index">
+        function <span class="apidocSignatureSpan">jscs.</span>token_index
+        <span class="apidocSignatureSpan">(firstToken)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function TokenIndex(firstToken) {
+    this._buildIndex(firstToken);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jscs.token_index.prototype" id="apidoc.module.jscs.token_index.prototype">module jscs.token_index.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.token_index.prototype._buildIndex" id="apidoc.element.jscs.token_index.prototype._buildIndex">
+        function <span class="apidocSignatureSpan">jscs.token_index.prototype.</span>_buildIndex
+        <span class="apidocSignatureSpan">(firstToken)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_buildIndex = function (firstToken) {
+    this._hasPragmas = false;
+
+    var tokens = [];
+    var index = [];
+    var positions = [];
+    var currentPosition = 0;
+    var currentToken = firstToken;
+    var lastBlockState = {&#x27;*&#x27;: true};
+    var tokenState;
+    var previousLoc = {line: 1, column: 0};
+
+    while (currentToken) {
+        tokens.push(currentToken);
+        currentToken.__loc = previousLoc;
+
+        var newlineCount = currentToken.getNewlineCount();
+        if (newlineCount &#x3e; 0) {
+            var lines = currentToken.getSourceCodeLines();
+            previousLoc = {
+                line: previousLoc.line + newlineCount,
+                column: lines[lines.length - 1].length
+            };
+        } else {
+            previousLoc = {
+                line: previousLoc.line,
+                column: previousLoc.column + currentToken.getSourceCodeLength()
+            };
+        }
+
+        if (currentToken.isComment) {
+            var value = currentToken.value;
+            var blockMatch = BLOCK_REGEXP.exec(value);
+            if (blockMatch) {
+                this._hasPragmas = true;
+                lastBlockState = assign({}, lastBlockState, parseRuleNames(blockMatch[2], blockMatch[1] === &#x27;en&#x27;));
+                tokenState = lastBlockState;
+            } else {
+                var lineMatch = LINE_REGEXP.exec(value);
+                if (lineMatch) {
+                    this._hasPragmas = true;
+                    var ignoreState = parseRuleNames(lineMatch[1], false);
+                    index.push(null);
+                    var ignoreToken = currentToken.getPreviousToken();
+                    var i = index.length - 1;
+                    while (ignoreToken) {
+                        i--;
+                        index[i] = assign({}, index[i], ignoreState);
+                        if (ignoreToken.getNewlineCount() &#x3e; 0) {
+                            break;
+                        }
+                        ignoreToken = ignoreToken.getPreviousToken();
+                    }
+                    ignoreToken = currentToken.getNextToken();
+                    while (ignoreToken) {
+                        index.push(ignoreState);
+                        if (ignoreToken.getNewlineCount() &#x3e; 0) {
+                            break;
+                        }
+                        ignoreToken = ignoreToken.getNextToken();
+                    }
+                    tokenState = assign({}, lastBlockState, ignoreState);
+                } else {
+                    tokenState = lastBlockState;
+                }
+            }
+        } else {
+            tokenState = lastBlockState;
+        }
+
+        if (index[currentPosition]) {
+            tokenState = assign({}, tokenState, index[currentPosition]);
+        }
+
+        index[currentPosition] = tokenState;
+        currentPosition++;
+
+        currentToken = currentToken.getNextToken();
+    }
+    this._tokens = tokens;
+    this._index = index;
+    this._positions = positions;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* Pragma index implementation.
+* Checks if rule is enabled or disabled for the specified element.
+*
+* @param {Element} firstToken
+* @constructor
+*/
+function TokenIndex(firstToken) {
+   this.<span class="apidocCodeKeywordSpan">_buildIndex</span>(firstToken);
+}
+
+/**
+* Builds pragma index.
+*
+* @param {Element} firstToken
+* @private
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.token_index.prototype.getElementLoc" id="apidoc.element.jscs.token_index.prototype.getElementLoc">
+        function <span class="apidocSignatureSpan">jscs.token_index.prototype.</span>getElementLoc
+        <span class="apidocSignatureSpan">(element)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getElementLoc = function (element) {
+    return element.getFirstToken().__loc ||  {
+        line: 1,
+        column: 0
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    } else if (element.getSourceCodeLength() === 1) {
+        offset = 0;
+    } else {
+        offset = (element.getNewlineCount() === 0 &#x26;&#x26; Math.ceil(element.getSourceCodeLength() / 2)) || 0;
+    }
+}
+
+var pos = tokenIndex ? tokenIndex.<span class="apidocCodeKeywordSpan">getElementLoc</span>(element) : element.getLoc().start;
+if (!pos) {
+    return EMPTY_POS;
+}
+
+if (offset === 0) {
+    return pos;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.token_index.prototype.isRuleEnabled" id="apidoc.element.jscs.token_index.prototype.isRuleEnabled">
+        function <span class="apidocSignatureSpan">jscs.token_index.prototype.</span>isRuleEnabled
+        <span class="apidocSignatureSpan">(ruleName, element)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isRuleEnabled = function (ruleName, element) {
+    if (!this._hasPragmas) {
+        return true;
+    }
+    var pos = this._tokens.indexOf(element.getFirstToken());
+    if (pos !== -1) {
+        var state = this._index[pos];
+        if (ruleName in state) {
+            return state[ruleName];
+        }
+
+        return state[&#x27;*&#x27;];
+    }
+
+    return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jscs.tree_iterator" id="apidoc.module.jscs.tree_iterator">module jscs.tree_iterator</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.tree_iterator.iterate" id="apidoc.element.jscs.tree_iterator.iterate">
+        function <span class="apidocSignatureSpan">jscs.tree_iterator.</span>iterate
+        <span class="apidocSignatureSpan">(node, cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function iterate(node, cb) {
+    if (&#x27;type&#x27; in node) {
+        estraverse.traverse(node, {
+            enter: function(node, parent) {
+                var parentCollection = [];
+
+                // parentCollection support
+                var path = this.path();
+                if (path) {
+                    var collectionKey;
+                    while (path.length &#x3e; 0) {
+                        var pathElement = path.pop();
+                        if (typeof pathElement === &#x27;string&#x27;) {
+                            collectionKey = pathElement;
+                            break;
+                        }
+                    }
+
+                    parentCollection = parent[collectionKey];
+                    if (!Array.isArray(parentCollection)) {
+                        parentCollection = [parentCollection];
+                    }
+                }
+
+                if (cb(node, parent, parentCollection) === false) {
+                    return estraverse.VisitorOption.Skip;
+                }
+            },
+            keys: VISITOR_KEYS
+        });
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Iterates through the token tree using tree iterator.
+ * Calls passed function for every token.
+ *
+ * @param {Function} cb
+ * @param {Object} [tree]
+ */
+iterate: function(cb, tree) {
+    return treeIterator.<span class="apidocCodeKeywordSpan">iterate</span>(tree || this._program, cb);
+},
+
+/**
+ * Returns nodes by type(s) from earlier built index.
+ *
+ * @param {String|String[]} type
+ * @returns {Object[]}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jscs.utils" id="apidoc.module.jscs.utils">module jscs.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.utils.getFunctionNodeFromIIFE" id="apidoc.element.jscs.utils.getFunctionNodeFromIIFE">
+        function <span class="apidocSignatureSpan">jscs.utils.</span>getFunctionNodeFromIIFE
+        <span class="apidocSignatureSpan">(node)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getFunctionNodeFromIIFE = function (node) {
+    if (node.type !== &#x27;CallExpression&#x27;) {
+        return null;
+    }
+
+    var callee = node.callee;
+
+    if (callee.type === &#x27;FunctionExpression&#x27;) {
+        return callee;
+    }
+
+    if (callee.type === &#x27;MemberExpression&#x27; &#x26;&#x26;
+        callee.object.type === &#x27;FunctionExpression&#x27; &#x26;&#x26;
+        callee.property.type === &#x27;Identifier&#x27; &#x26;&#x26;
+        (callee.property.name === &#x27;call&#x27; || callee.property.name === &#x27;apply&#x27;)
+    ) {
+        return callee.object;
+    }
+
+    return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.utils.isPragma" id="apidoc.element.jscs.utils.isPragma">
+        function <span class="apidocSignatureSpan">jscs.utils.</span>isPragma
+        <span class="apidocSignatureSpan">(additionalExceptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isPragma = function (additionalExceptions) {
+    var pragmaKeywords = [
+        &#x27;eslint&#x27;,
+        &#x27;eslint-env&#x27;,
+        &#x27;eslint-enable&#x27;,
+        &#x27;eslint-disable&#x27;,
+        &#x27;eslint-disable-line&#x27;,
+        &#x27;eslint-disable-next-line&#x27;,
+        &#x27;global&#x27;,
+        &#x27;jshint&#x27;,
+        &#x27;jslint&#x27;,
+        &#x27;globals&#x27;,
+        &#x27;falls through&#x27;,
+        &#x27;exported&#x27;,
+        &#x27;jscs:&#x27;,
+        &#x27;jscs:enable&#x27;,
+        &#x27;jscs:disable&#x27;,
+        &#x27;jscs:ignore&#x27;,
+        &#x27;istanbul&#x27;
+    ];
+    if (additionalExceptions &#x26;&#x26; Array.isArray(additionalExceptions)) {
+        pragmaKeywords = pragmaKeywords.concat(additionalExceptions);
+    }
+
+    return function(comment) {
+        // pragmaKeywords precede a space or the end of the comment
+        var trimmedComment = comment.trim() + &#x27; &#x27;;
+        for (var i = 0; i &#x3c; pragmaKeywords.length; i++) {
+            if (trimmedComment.indexOf(pragmaKeywords[i] + &#x27; &#x27;) === 0) {
+                return true;
+            }
+        }
+        return false;
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.utils.isRelativePath" id="apidoc.element.jscs.utils.isRelativePath">
+        function <span class="apidocSignatureSpan">jscs.utils.</span>isRelativePath
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isRelativePath = function (path) {
+    // Logic from: https://github.com/joyent/node/blob/4f1ae11a62b97052bc83756f8cb8700cc1f61661/lib/module.js#L237
+    var start = path.substring(0, 2);
+    return start === &#x27;./&#x27; || start === &#x27;..&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * or just returns the filepath if not relative
+ *
+ * @param  {String} filepath
+ * @param  {String} basePath
+ * @return {String}
+ */
+exports.normalizePath = function(filepath, basePath) {
+    if (this.<span class="apidocCodeKeywordSpan">isRelativePath</span>(filepath)) {
+        return path.resolve(basePath, filepath);
+    }
+
+    return filepath;
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.utils.isSnakeCased" id="apidoc.element.jscs.utils.isSnakeCased">
+        function <span class="apidocSignatureSpan">jscs.utils.</span>isSnakeCased
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isSnakeCased = function (name) {
+    return SNAKE_CASE_RE.test(name);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.utils.isValidIdentifierName" id="apidoc.element.jscs.utils.isValidIdentifierName">
+        function <span class="apidocSignatureSpan">jscs.utils.</span>isValidIdentifierName
+        <span class="apidocSignatureSpan">(name, dialect)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isValidIdentifierName = function (name, dialect) {
+    dialect = dialect || &#x27;es5&#x27;;
+    var identifierRegex = dialect === &#x27;es5&#x27; ? IDENTIFIER_NAME_ES5_RE : IDENTIFIER_NAME_ES6_RE;
+    return !reservedWords.check(name, dialect, true) &#x26;&#x26; identifierRegex.test(name);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.utils.normalizePath" id="apidoc.element.jscs.utils.normalizePath">
+        function <span class="apidocSignatureSpan">jscs.utils.</span>normalizePath
+        <span class="apidocSignatureSpan">(filepath, basePath)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">normalizePath = function (filepath, basePath) {
+    if (this.isRelativePath(filepath)) {
+        return path.resolve(basePath, filepath);
+    }
+
+    return filepath;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.utils.promisify" id="apidoc.element.jscs.utils.promisify">
+        function <span class="apidocSignatureSpan">jscs.utils.</span>promisify
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">promisify = function (fn) {
+    return function() {
+        var deferred = Vow.defer();
+        var args = [].slice.call(arguments);
+
+        args.push(function(err, result) {
+            if (err) {
+                deferred.reject(err);
+            } else {
+                deferred.resolve(result);
+            }
+        });
+
+        fn.apply(null, args);
+
+        return deferred.promise();
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.jscs.utils.trimUnderscores" id="apidoc.element.jscs.utils.trimUnderscores">
+        function <span class="apidocSignatureSpan">jscs.utils.</span>trimUnderscores
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">trimUnderscores = function (name) {
+    var res = name.replace(TRAILING_UNDERSCORES_RE, &#x27;&#x27;);
+    return res ? res : name;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
