@@ -1,17 +1,40 @@
 {
-    "buildNpmdoc":"jscs",
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "buildNpmdoc": "jscs",
+    "description": "api documentation for [jscs (v3.0.7)](http://jscs.info) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-jscs.svg)](https://travis-ci.org/npmdoc/node-npmdoc-jscs)",
     "devDependencies": {
-        "jscs": "*",
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "jscs": "*",
         "utility2": "kaizhu256/node-utility2#alpha"
     },
-    "name":"npmdoc-jscs",
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-jscs",
+    "keywords": [
+        "documentation",
+        "jscs"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_jscs.js",
+    "name": "npmdoc-jscs",
+    "nameAlias": "npmdoc_jscs",
+    "nameOriginal": "npmdoc-jscs",
+    "os": [
+        "darwin",
+        "linux"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/npmdoc/node-npmdoc-jscs.git"
     },
     "scripts": {
-        "build-ci": "utility2 shReadmeTest build_ci.sh"
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "(set -e; npm install \"kaizhu256/node-utility2#alpha\"; utility2 shDeployHeroku)",
+        "postinstall": "if [ -f npm_scripts.sh ]; then ./npm_scripts.sh postinstall; fi",
+        "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
-    "version": "0.0.1"
+    "version": "0.0.2"
 }
