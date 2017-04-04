@@ -1,11 +1,13 @@
-# api documentation for  [jscs (v3.0.7)](http://jscs.info)  [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-jscs.svg)](https://travis-ci.org/npmdoc/node-npmdoc-jscs)
+# api documentation for  [jscs (v3.0.7)](http://jscs.info)  [![npm package](https://img.shields.io/npm/v/npmdoc-jscs.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-jscs) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-jscs.svg)](https://travis-ci.org/npmdoc/node-npmdoc-jscs)
 #### JavaScript Code Style
 
 [![NPM](https://nodei.co/npm/jscs.png?downloads=true)](https://www.npmjs.com/package/jscs)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-jscs/build/screen-capture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-jscs_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-jscs/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-jscs/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-jscs_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-jscs/build/apidoc.html)
 
-![package-listing](https://npmdoc.github.io/node-npmdoc-jscs/build/screen-capture.npmPackageListing.svg)
+![npmPackageListing](https://npmdoc.github.io/node-npmdoc-jscs/build/screenCapture.npmPackageListing.svg)
+
+![npmPackageDependencyTree](https://npmdoc.github.io/node-npmdoc-jscs/build/screenCapture.npmPackageDependencyTree.svg)
 
 
 
@@ -175,21 +177,13 @@
 1.  [function <span class="apidocSignatureSpan">jscs.</span>js_file (params)](#apidoc.element.jscs.js_file)
 1.  [function <span class="apidocSignatureSpan">jscs.</span>super_ ()](#apidoc.element.jscs.super_)
 1.  [function <span class="apidocSignatureSpan">jscs.</span>token_assert (file)](#apidoc.element.jscs.token_assert)
-1.  [function <span class="apidocSignatureSpan">jscs.</span>token_index (firstToken)](#apidoc.element.jscs.token_index)
-1.  object <span class="apidocSignatureSpan">jscs.</span>cli_config
 1.  object <span class="apidocSignatureSpan">jscs.</span>errors.prototype
 1.  object <span class="apidocSignatureSpan">jscs.</span>js_file.prototype
 1.  object <span class="apidocSignatureSpan">jscs.</span>super_.prototype
 1.  object <span class="apidocSignatureSpan">jscs.</span>token_assert.prototype
 1.  object <span class="apidocSignatureSpan">jscs.</span>token_categorizer
-1.  object <span class="apidocSignatureSpan">jscs.</span>token_index.prototype
 1.  object <span class="apidocSignatureSpan">jscs.</span>tree_iterator
 1.  object <span class="apidocSignatureSpan">jscs.</span>utils
-
-#### [module jscs.cli_config](#apidoc.module.jscs.cli_config)
-1.  [function <span class="apidocSignatureSpan">jscs.cli_config.</span>getContent (config, directory)](#apidoc.element.jscs.cli_config.getContent)
-1.  [function <span class="apidocSignatureSpan">jscs.cli_config.</span>getReporter (reporter, colors)](#apidoc.element.jscs.cli_config.getReporter)
-1.  [function <span class="apidocSignatureSpan">jscs.cli_config.</span>load (config, cwd)](#apidoc.element.jscs.cli_config.load)
 
 #### [module jscs.errors](#apidoc.module.jscs.errors)
 1.  [function <span class="apidocSignatureSpan">jscs.</span>errors (file)](#apidoc.element.jscs.errors.errors)
@@ -294,14 +288,6 @@
 #### [module jscs.token_categorizer](#apidoc.module.jscs.token_categorizer)
 1.  [function <span class="apidocSignatureSpan">jscs.token_categorizer.</span>categorizeCloseParen (token)](#apidoc.element.jscs.token_categorizer.categorizeCloseParen)
 1.  [function <span class="apidocSignatureSpan">jscs.token_categorizer.</span>categorizeOpenParen (token)](#apidoc.element.jscs.token_categorizer.categorizeOpenParen)
-
-#### [module jscs.token_index](#apidoc.module.jscs.token_index)
-1.  [function <span class="apidocSignatureSpan">jscs.</span>token_index (firstToken)](#apidoc.element.jscs.token_index.token_index)
-
-#### [module jscs.token_index.prototype](#apidoc.module.jscs.token_index.prototype)
-1.  [function <span class="apidocSignatureSpan">jscs.token_index.prototype.</span>_buildIndex (firstToken)](#apidoc.element.jscs.token_index.prototype._buildIndex)
-1.  [function <span class="apidocSignatureSpan">jscs.token_index.prototype.</span>getElementLoc (element)](#apidoc.element.jscs.token_index.prototype.getElementLoc)
-1.  [function <span class="apidocSignatureSpan">jscs.token_index.prototype.</span>isRuleEnabled (ruleName, element)](#apidoc.element.jscs.token_index.prototype.isRuleEnabled)
 
 #### [module jscs.tree_iterator](#apidoc.module.jscs.tree_iterator)
 1.  [function <span class="apidocSignatureSpan">jscs.tree_iterator.</span>iterate (node, cb)](#apidoc.element.jscs.tree_iterator.iterate)
@@ -417,241 +403,6 @@ function TokenAssert(file) {
 - example usage
 ```shell
 n/a
-```
-
-#### <a name="apidoc.element.jscs.token_index"></a>[function <span class="apidocSignatureSpan">jscs.</span>token_index (firstToken)](#apidoc.element.jscs.token_index)
-- description and source-code
-```javascript
-function TokenIndex(firstToken) {
-    this._buildIndex(firstToken);
-}
-```
-- example usage
-```shell
-n/a
-```
-
-
-
-# <a name="apidoc.module.jscs.cli_config"></a>[module jscs.cli_config](#apidoc.module.jscs.cli_config)
-
-#### <a name="apidoc.element.jscs.cli_config.getContent"></a>[function <span class="apidocSignatureSpan">jscs.cli_config.</span>getContent (config, directory)](#apidoc.element.jscs.cli_config.getContent)
-- description and source-code
-```javascript
-getContent = function (config, directory) {
-    if (!config) {
-        return;
-    }
-
-    if (!directory) {
-        directory = process.cwd();
-    }
-
-    var configPath = path.resolve(directory, config);
-    var ext;
-    var data;
-    var content;
-    var requireConfigPath;
-
-    if (fs.existsSync(configPath)) {
-        config = path.basename(config);
-        ext = path.extname(configPath);
-
-        if (ext === '.js') {
-            content = require(configPath);
-        } else {
-            data = stripBOM(fs.readFileSync(configPath, 'utf8'));
-
-            if (ext === '.json') {
-                content = parseJson(stripJSONComments(data));
-            } else if (ext === '.yaml') {
-                content = yaml.safeLoad(data);
-            } else {
-                // try both JSON and YAML
-
-                try {
-                    content = parseJson(stripJSONComments(data));
-                } catch (jsonError) {
-                    try {
-                        content = yaml.safeLoad(data);
-                    } catch (yamlError) {
-                        if (stripJSONComments(data).trim()[0] === '{') {
-                            // the intention was probably JSON
-                            throw jsonError;
-                        } else {
-                            // assume the intention was YAML
-                            throw yamlError;
-                        }
-                    }
-                }
-            }
-        }
-    } else {
-        // Try to load it as a node module
-        try {
-            requireConfigPath = resolve.sync(config, { basedir: directory });
-            content = require(requireConfigPath);
-        } catch (e) {}
-    }
-
-    if (content) {
-        // Adding property via Object.defineProperty makes it
-        // non-enumerable and avoids warning for unsupported rules
-        Object.defineProperty(content, 'configPath', {
-            value: requireConfigPath || configPath
-        });
-    }
-
-    return content && config === 'package.json' ? content.jscsConfig : content;
-}
-```
-- example usage
-```shell
-...
- */
-exports.load = function(config, cwd) {
-var content;
-var directory = cwd || process.cwd();
-
-// If config option is given, attempt to load it
-if (config) {
-    return this.getContent(config, directory);
-}
-
-content = this.getContent(
-    findup(configs, { nocase: true, cwd: directory }, function(configPath) {
-        if (path.basename(configPath) === 'package.json') {
-            return !!this.getContent(configPath);
-        }
-...
-```
-
-#### <a name="apidoc.element.jscs.cli_config.getReporter"></a>[function <span class="apidocSignatureSpan">jscs.cli_config.</span>getReporter (reporter, colors)](#apidoc.element.jscs.cli_config.getReporter)
-- description and source-code
-```javascript
-getReporter = function (reporter, colors) {
-    var writerPath;
-    var writer;
-
-    if (colors !== false) {
-        colors = true;
-    }
-
-    if (reporter) {
-        // ensure reporter is a string (and allow non-string types to be coerced)
-        reporter = reporter.toString();
-        writerPath = path.resolve(process.cwd(), reporter);
-
-        if (!fs.existsSync(writerPath)) {
-            writerPath = path.resolve(__dirname, './reporters/' + reporter);
-        }
-    } else {
-        writerPath = path.resolve(
-            __dirname, './reporters/', (colors && supportsColor ? 'console' : 'text')
-        );
-    }
-
-    try {
-        writer = require(writerPath);
-    } catch (e) {
-        writer = null;
-    }
-
-    if (!writer) {
-        try {
-            writer = require(reporter);
-            writerPath = reporter;
-        } catch (e) {}
-    }
-
-    return {
-        path: writerPath,
-        writer: writer
-    };
-}
-```
-- example usage
-```shell
-...
-if (!args.length && process.stdin.isTTY && typeof program.autoConfigure !== 'string') {
-    console.error('No input files specified. Try option --help for usage information.');
-    defer.reject(3);
-
-    return returnArgs;
-}
-
-reporter = configFile.getReporter(program.reporter, program.colors);
-
-returnArgs.reporter = reporter.path;
-
-if (!reporter.writer) {
-    console.error('Reporter "%s" does not exist.', program.reporter);
-    returnArgs.reporter = reporter.path;
-    defer.reject(6);
-...
-```
-
-#### <a name="apidoc.element.jscs.cli_config.load"></a>[function <span class="apidocSignatureSpan">jscs.cli_config.</span>load (config, cwd)](#apidoc.element.jscs.cli_config.load)
-- description and source-code
-```javascript
-load = function (config, cwd) {
-    var content;
-    var directory = cwd || process.cwd();
-
-    // If config option is given, attempt to load it
-    if (config) {
-        return this.getContent(config, directory);
-    }
-
-    content = this.getContent(
-        findup(configs, { nocase: true, cwd: directory }, function(configPath) {
-            if (path.basename(configPath) === 'package.json') {
-                return !!this.getContent(configPath);
-            }
-
-            return true;
-        }.bind(this))
-    );
-
-    if (content) {
-        return content;
-    }
-
-    // Try to load standard configs from home dir
-    var directoryArr = [process.env.USERPROFILE, process.env.HOMEPATH, process.env.HOME];
-    for (var i = 0, dirLen = directoryArr.length; i < dirLen; i++) {
-        if (!directoryArr[i]) {
-            continue;
-        }
-
-        for (var j = 0, len = configs.length; j < len; j++) {
-            content = this.getContent(configs[j], directoryArr[i]);
-
-            if (content) {
-                return content;
-            }
-        }
-    }
-}
-```
-- example usage
-```shell
-...
-}
-
-promise.always(function(status) {
-    exit(status.valueOf());
-});
-
-try {
-    config = configFile.load(program.config);
-} catch (e) {
-    console.error('Config source is corrupted -', e.toString());
-    defer.reject(5);
-
-    return returnArgs;
-}
-...
 ```
 
 
@@ -962,20 +713,21 @@ filter = function (filter) {
 - example usage
 ```shell
 ...
-    var file;
 
-    options = Object.create(options);
-    options.maxDepth = 1;
-    options.cwd = path.resolve(options.cwd);
+/**
+ * Returns amount of errors added by the rules.
+ *
+ * @returns {Number}
+ */
+getValidationErrorCount: function() {
+    return this._errorList.filter(function(error) {
+        return error.rule !== 'parseError' && error.rule !== 'internalError';
+    });
+},
 
-    do {
-file = patterns.filter(function(pattern) {
-    var configPath = glob.sync(pattern, options)[0];
-
-    if (configPath) {
-        return fn(path.join(options.cwd, configPath));
-    }
-})[0];
+/**
+ * Returns amount of errors added by the rules.
+ *
 ...
 ```
 
@@ -1053,23 +805,7 @@ isEmpty = function () {
 ```
 - example usage
 ```shell
-...
-}
-
-checkerPromise.then(function(errorsCollection) {
-    reporter.writer(errorsCollection);
-    handleMaxErrors();
-
-    errorsCollection.forEach(function(errors) {
-        if (!errors.isEmpty()) {
-            defer.reject(2);
-        }
-    });
-
-    defer.resolve(0);
-}).fail(function(e) {
-    console.error(e.stack);
-...
+n/a
 ```
 
 #### <a name="apidoc.element.jscs.errors.prototype.setCurrentRule"></a>[function <span class="apidocSignatureSpan">jscs.errors.prototype.</span>setCurrentRule (rule)](#apidoc.element.jscs.errors.prototype.setCurrentRule)
@@ -2438,23 +2174,7 @@ configure = function (config) {
 ```
 - example usage
 ```shell
-...
-    program.maxErrors = Infinity;
-}
-
-checker.getConfiguration().overrideFromCLI(program);
-checker.getConfiguration().registerDefaultRules();
-
-try {
-    checker.configure(config);
-} catch (e) {
-    console.error(e.message);
-    defer.reject(1);
-
-    return returnArgs;
-}
-if (program.autoConfigure) {
-...
+n/a
 ```
 
 #### <a name="apidoc.element.jscs.super_.prototype.fixString"></a>[function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>fixString (source, filename)](#apidoc.element.jscs.super_.prototype.fixString)
@@ -2514,23 +2234,7 @@ getConfiguration = function () {
 ```
 - example usage
 ```shell
-...
-}
-
-// To run autoconfigure over all errors in the path
-if (program.autoConfigure) {
-    program.maxErrors = Infinity;
-}
-
-checker.getConfiguration().overrideFromCLI(program);
-checker.getConfiguration().registerDefaultRules();
-
-try {
-    checker.configure(config);
-} catch (e) {
-    console.error(e.message);
-    defer.reject(1);
-...
+n/a
 ```
 
 #### <a name="apidoc.element.jscs.super_.prototype.getProcessedConfig"></a>[function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>getProcessedConfig ()](#apidoc.element.jscs.super_.prototype.getProcessedConfig)
@@ -2566,23 +2270,7 @@ maxErrorsExceeded = function () {
 ```
 - example usage
 ```shell
-...
-var returnArgs = {
-    checker: checker,
-    reporter: program.reporter,
-    promise: promise
-};
-
-function handleMaxErrors() {
-    if (checker.maxErrorsExceeded()) {
-        console.error('Too many errors... Increase 'maxErrors' configuration option value to see more.');
-    }
-}
-
-promise.always(function(status) {
-    exit(status.valueOf());
-});
-...
+n/a
 ```
 
 #### <a name="apidoc.element.jscs.super_.prototype.registerDefaultRules"></a>[function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>registerDefaultRules ()](#apidoc.element.jscs.super_.prototype.registerDefaultRules)
@@ -2594,22 +2282,7 @@ registerDefaultRules = function () {
 ```
 - example usage
 ```shell
-...
-
-// To run autoconfigure over all errors in the path
-if (program.autoConfigure) {
-    program.maxErrors = Infinity;
-}
-
-checker.getConfiguration().overrideFromCLI(program);
-checker.getConfiguration().registerDefaultRules();
-
-try {
-    checker.configure(config);
-} catch (e) {
-    console.error(e.message);
-    defer.reject(1);
-...
+n/a
 ```
 
 #### <a name="apidoc.element.jscs.super_.prototype.registerRule"></a>[function <span class="apidocSignatureSpan">jscs.super_.prototype.</span>registerRule (rule)](#apidoc.element.jscs.super_.prototype.registerRule)
@@ -3230,190 +2903,6 @@ categorizeOpenParen = function (token) {
 
     // All remaining cases are grouping parentheses
     return 'ParenthesizedExpression';
-}
-```
-- example usage
-```shell
-n/a
-```
-
-
-
-# <a name="apidoc.module.jscs.token_index"></a>[module jscs.token_index](#apidoc.module.jscs.token_index)
-
-#### <a name="apidoc.element.jscs.token_index.token_index"></a>[function <span class="apidocSignatureSpan">jscs.</span>token_index (firstToken)](#apidoc.element.jscs.token_index.token_index)
-- description and source-code
-```javascript
-function TokenIndex(firstToken) {
-    this._buildIndex(firstToken);
-}
-```
-- example usage
-```shell
-n/a
-```
-
-
-
-# <a name="apidoc.module.jscs.token_index.prototype"></a>[module jscs.token_index.prototype](#apidoc.module.jscs.token_index.prototype)
-
-#### <a name="apidoc.element.jscs.token_index.prototype._buildIndex"></a>[function <span class="apidocSignatureSpan">jscs.token_index.prototype.</span>_buildIndex (firstToken)](#apidoc.element.jscs.token_index.prototype._buildIndex)
-- description and source-code
-```javascript
-_buildIndex = function (firstToken) {
-    this._hasPragmas = false;
-
-    var tokens = [];
-    var index = [];
-    var positions = [];
-    var currentPosition = 0;
-    var currentToken = firstToken;
-    var lastBlockState = {'*': true};
-    var tokenState;
-    var previousLoc = {line: 1, column: 0};
-
-    while (currentToken) {
-        tokens.push(currentToken);
-        currentToken.__loc = previousLoc;
-
-        var newlineCount = currentToken.getNewlineCount();
-        if (newlineCount > 0) {
-            var lines = currentToken.getSourceCodeLines();
-            previousLoc = {
-                line: previousLoc.line + newlineCount,
-                column: lines[lines.length - 1].length
-            };
-        } else {
-            previousLoc = {
-                line: previousLoc.line,
-                column: previousLoc.column + currentToken.getSourceCodeLength()
-            };
-        }
-
-        if (currentToken.isComment) {
-            var value = currentToken.value;
-            var blockMatch = BLOCK_REGEXP.exec(value);
-            if (blockMatch) {
-                this._hasPragmas = true;
-                lastBlockState = assign({}, lastBlockState, parseRuleNames(blockMatch[2], blockMatch[1] === 'en'));
-                tokenState = lastBlockState;
-            } else {
-                var lineMatch = LINE_REGEXP.exec(value);
-                if (lineMatch) {
-                    this._hasPragmas = true;
-                    var ignoreState = parseRuleNames(lineMatch[1], false);
-                    index.push(null);
-                    var ignoreToken = currentToken.getPreviousToken();
-                    var i = index.length - 1;
-                    while (ignoreToken) {
-                        i--;
-                        index[i] = assign({}, index[i], ignoreState);
-                        if (ignoreToken.getNewlineCount() > 0) {
-                            break;
-                        }
-                        ignoreToken = ignoreToken.getPreviousToken();
-                    }
-                    ignoreToken = currentToken.getNextToken();
-                    while (ignoreToken) {
-                        index.push(ignoreState);
-                        if (ignoreToken.getNewlineCount() > 0) {
-                            break;
-                        }
-                        ignoreToken = ignoreToken.getNextToken();
-                    }
-                    tokenState = assign({}, lastBlockState, ignoreState);
-                } else {
-                    tokenState = lastBlockState;
-                }
-            }
-        } else {
-            tokenState = lastBlockState;
-        }
-
-        if (index[currentPosition]) {
-            tokenState = assign({}, tokenState, index[currentPosition]);
-        }
-
-        index[currentPosition] = tokenState;
-        currentPosition++;
-
-        currentToken = currentToken.getNextToken();
-    }
-    this._tokens = tokens;
-    this._index = index;
-    this._positions = positions;
-}
-```
-- example usage
-```shell
-...
-* Pragma index implementation.
-* Checks if rule is enabled or disabled for the specified element.
-*
-* @param {Element} firstToken
-* @constructor
-*/
-function TokenIndex(firstToken) {
-   this._buildIndex(firstToken);
-}
-
-/**
-* Builds pragma index.
-*
-* @param {Element} firstToken
-* @private
-...
-```
-
-#### <a name="apidoc.element.jscs.token_index.prototype.getElementLoc"></a>[function <span class="apidocSignatureSpan">jscs.token_index.prototype.</span>getElementLoc (element)](#apidoc.element.jscs.token_index.prototype.getElementLoc)
-- description and source-code
-```javascript
-getElementLoc = function (element) {
-    return element.getFirstToken().__loc ||  {
-        line: 1,
-        column: 0
-    };
-}
-```
-- example usage
-```shell
-...
-    } else if (element.getSourceCodeLength() === 1) {
-        offset = 0;
-    } else {
-        offset = (element.getNewlineCount() === 0 && Math.ceil(element.getSourceCodeLength() / 2)) || 0;
-    }
-}
-
-var pos = tokenIndex ? tokenIndex.getElementLoc(element) : element.getLoc().start;
-if (!pos) {
-    return EMPTY_POS;
-}
-
-if (offset === 0) {
-    return pos;
-}
-...
-```
-
-#### <a name="apidoc.element.jscs.token_index.prototype.isRuleEnabled"></a>[function <span class="apidocSignatureSpan">jscs.token_index.prototype.</span>isRuleEnabled (ruleName, element)](#apidoc.element.jscs.token_index.prototype.isRuleEnabled)
-- description and source-code
-```javascript
-isRuleEnabled = function (ruleName, element) {
-    if (!this._hasPragmas) {
-        return true;
-    }
-    var pos = this._tokens.indexOf(element.getFirstToken());
-    if (pos !== -1) {
-        var state = this._index[pos];
-        if (ruleName in state) {
-            return state[ruleName];
-        }
-
-        return state['*'];
-    }
-
-    return true;
 }
 ```
 - example usage
