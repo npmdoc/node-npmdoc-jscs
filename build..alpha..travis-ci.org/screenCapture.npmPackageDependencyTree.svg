@@ -1,0 +1,109 @@
+<svg height="1694" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="1694" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26">└─┬ jscs@3.0.7 </tspan>
+<tspan x="10" y="42">  ├─┬ chalk@1.1.3 </tspan>
+<tspan x="10" y="58">  │ ├── ansi-styles@2.2.1 </tspan>
+<tspan x="10" y="74">  │ ├── escape-string-regexp@1.0.5 </tspan>
+<tspan x="10" y="90">  │ ├─┬ has-ansi@2.0.0 </tspan>
+<tspan x="10" y="106">  │ │ └── ansi-regex@2.1.1 </tspan>
+<tspan x="10" y="122">  │ ├── strip-ansi@3.0.1 </tspan>
+<tspan x="10" y="138">  │ └── supports-color@2.0.0 </tspan>
+<tspan x="10" y="154">  ├─┬ cli-table@0.3.1 </tspan>
+<tspan x="10" y="170">  │ └── colors@1.0.3 </tspan>
+<tspan x="10" y="186">  ├─┬ commander@2.9.0 </tspan>
+<tspan x="10" y="202">  │ └── graceful-readlink@1.0.1 </tspan>
+<tspan x="10" y="218">  ├─┬ cst@0.4.9 </tspan>
+<tspan x="10" y="234">  │ ├─┬ babel-runtime@6.23.0 </tspan>
+<tspan x="10" y="250">  │ │ ├── core-js@2.4.1 </tspan>
+<tspan x="10" y="266">  │ │ └── regenerator-runtime@0.10.3 </tspan>
+<tspan x="10" y="282">  │ ├── babylon@6.16.1 </tspan>
+<tspan x="10" y="298">  │ └─┬ source-map-support@0.4.14 </tspan>
+<tspan x="10" y="314">  │   └── source-map@0.5.6 </tspan>
+<tspan x="10" y="330">  ├── estraverse@4.2.0 </tspan>
+<tspan x="10" y="346">  ├── exit@0.1.2 </tspan>
+<tspan x="10" y="362">  ├─┬ glob@5.0.15 </tspan>
+<tspan x="10" y="378">  │ ├─┬ inflight@1.0.6 </tspan>
+<tspan x="10" y="394">  │ │ └── wrappy@1.0.2 </tspan>
+<tspan x="10" y="410">  │ ├── inherits@2.0.3 </tspan>
+<tspan x="10" y="426">  │ ├── once@1.4.0 </tspan>
+<tspan x="10" y="442">  │ └── path-is-absolute@1.0.1 </tspan>
+<tspan x="10" y="458">  ├─┬ htmlparser2@3.8.3 </tspan>
+<tspan x="10" y="474">  │ ├── domelementtype@1.3.0 </tspan>
+<tspan x="10" y="490">  │ ├── domhandler@2.3.0 </tspan>
+<tspan x="10" y="506">  │ ├─┬ domutils@1.5.1 </tspan>
+<tspan x="10" y="522">  │ │ └─┬ dom-serializer@0.1.0 </tspan>
+<tspan x="10" y="538">  │ │   ├── domelementtype@1.1.3 </tspan>
+<tspan x="10" y="554">  │ │   └── entities@1.1.1 </tspan>
+<tspan x="10" y="570">  │ ├── entities@1.0.0 </tspan>
+<tspan x="10" y="586">  │ └─┬ readable-stream@1.1.14 </tspan>
+<tspan x="10" y="602">  │   ├── core-util-is@1.0.2 </tspan>
+<tspan x="10" y="618">  │   ├── isarray@0.0.1 </tspan>
+<tspan x="10" y="634">  │   └── string_decoder@0.10.31 </tspan>
+<tspan x="10" y="650">  ├─┬ js-yaml@3.4.6 </tspan>
+<tspan x="10" y="666">  │ ├─┬ argparse@1.0.9 </tspan>
+<tspan x="10" y="682">  │ │ └── sprintf-js@1.0.3 </tspan>
+<tspan x="10" y="698">  │ ├── esprima@2.7.3 </tspan>
+<tspan x="10" y="714">  │ └── inherit@2.2.6 </tspan>
+<tspan x="10" y="730">  ├─┬ jscs-jsdoc@2.0.0 </tspan>
+<tspan x="10" y="746">  │ ├─┬ comment-parser@0.3.1 </tspan>
+<tspan x="10" y="762">  │ │ └─┬ readable-stream@2.2.6 </tspan>
+<tspan x="10" y="778">  │ │   ├── buffer-shims@1.0.0 </tspan>
+<tspan x="10" y="794">  │ │   ├── isarray@1.0.0 </tspan>
+<tspan x="10" y="810">  │ │   ├── process-nextick-args@1.0.7 </tspan>
+<tspan x="10" y="826">  │ │   └── util-deprecate@1.0.2 </tspan>
+<tspan x="10" y="842">  │ └── jsdoctypeparser@1.2.0 </tspan>
+<tspan x="10" y="858">  ├── jscs-preset-wikimedia@1.0.0 </tspan>
+<tspan x="10" y="874">  ├─┬ jsonlint@1.6.2 </tspan>
+<tspan x="10" y="890">  │ ├── JSV@4.0.2 </tspan>
+<tspan x="10" y="906">  │ └─┬ nomnom@1.8.1 </tspan>
+<tspan x="10" y="922">  │   ├─┬ chalk@0.4.0 </tspan>
+<tspan x="10" y="938">  │   │ ├── ansi-styles@1.0.0 </tspan>
+<tspan x="10" y="954">  │   │ ├── has-color@0.1.7 </tspan>
+<tspan x="10" y="970">  │   │ └── strip-ansi@0.1.1 </tspan>
+<tspan x="10" y="986">  │   └── underscore@1.6.0 </tspan>
+<tspan x="10" y="1002">  ├── lodash@3.10.1 </tspan>
+<tspan x="10" y="1018">  ├─┬ minimatch@3.0.3 </tspan>
+<tspan x="10" y="1034">  │ └─┬ brace-expansion@1.1.6 </tspan>
+<tspan x="10" y="1050">  │   ├── balanced-match@0.4.2 </tspan>
+<tspan x="10" y="1066">  │   └── concat-map@0.0.1 </tspan>
+<tspan x="10" y="1082">  ├── natural-compare@1.2.2 </tspan>
+<tspan x="10" y="1098">  ├── pathval@0.1.1 </tspan>
+<tspan x="10" y="1114">  ├─┬ prompt@0.2.14 </tspan>
+<tspan x="10" y="1130">  │ ├── pkginfo@0.4.0 </tspan>
+<tspan x="10" y="1146">  │ ├─┬ read@1.0.7 </tspan>
+<tspan x="10" y="1162">  │ │ └── mute-stream@0.0.7 </tspan>
+<tspan x="10" y="1178">  │ ├── revalidator@0.1.8 </tspan>
+<tspan x="10" y="1194">  │ ├─┬ utile@0.2.1 </tspan>
+<tspan x="10" y="1210">  │ │ ├── async@0.2.10 </tspan>
+<tspan x="10" y="1226">  │ │ ├── deep-equal@1.0.1 </tspan>
+<tspan x="10" y="1242">  │ │ ├── i@0.3.5 </tspan>
+<tspan x="10" y="1258">  │ │ ├─┬ mkdirp@0.5.1 </tspan>
+<tspan x="10" y="1274">  │ │ │ └── minimist@0.0.8 </tspan>
+<tspan x="10" y="1290">  │ │ ├── ncp@0.4.2 </tspan>
+<tspan x="10" y="1306">  │ │ └─┬ rimraf@2.6.1 </tspan>
+<tspan x="10" y="1322">  │ │   └── glob@7.1.1 </tspan>
+<tspan x="10" y="1338">  │ └─┬ winston@0.8.3 </tspan>
+<tspan x="10" y="1354">  │   ├── colors@0.6.2 </tspan>
+<tspan x="10" y="1370">  │   ├── cycle@1.0.3 </tspan>
+<tspan x="10" y="1386">  │   ├── eyes@0.1.8 </tspan>
+<tspan x="10" y="1402">  │   ├── isstream@0.1.2 </tspan>
+<tspan x="10" y="1418">  │   ├── pkginfo@0.3.1 </tspan>
+<tspan x="10" y="1434">  │   └── stack-trace@0.0.9 </tspan>
+<tspan x="10" y="1450">  ├── reserved-words@0.1.1 </tspan>
+<tspan x="10" y="1466">  ├─┬ resolve@1.3.2 </tspan>
+<tspan x="10" y="1482">  │ └── path-parse@1.0.5 </tspan>
+<tspan x="10" y="1498">  ├─┬ strip-bom@2.0.0 </tspan>
+<tspan x="10" y="1514">  │ └── is-utf8@0.2.1 </tspan>
+<tspan x="10" y="1530">  ├── strip-json-comments@1.0.4 </tspan>
+<tspan x="10" y="1546">  ├── to-double-quotes@2.0.0 </tspan>
+<tspan x="10" y="1562">  ├── to-single-quotes@2.0.1 </tspan>
+<tspan x="10" y="1578">  ├── vow@0.4.15 </tspan>
+<tspan x="10" y="1594">  ├─┬ vow-fs@0.3.6 </tspan>
+<tspan x="10" y="1610">  │ ├─┬ glob@7.1.1 </tspan>
+<tspan x="10" y="1626">  │ │ └── fs.realpath@1.0.0 </tspan>
+<tspan x="10" y="1642">  │ ├── uuid@2.0.3 </tspan>
+<tspan x="10" y="1658">  │ └── vow-queue@0.4.2 </tspan>
+<tspan x="10" y="1674">  └── xmlbuilder@3.1.0</tspan>
+</text>
+</svg>
