@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="http://jscs.info"
-
-    >jscs (v3.0.7)</a>
+    <a href="http://jscs.info">jscs (v3.0.7)</a>
 </h1>
 <h4>JavaScript Code Style</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.jscs">module jscs</a><ol>
 
@@ -1512,14 +1505,14 @@
     <li>description and source-code<pre class="apidocCodePre">errors = function (file) {
     this._errorList = [];
     this._file = file;
-    this._currentRule = &#x27;&#x27;;
+    this._currentRule = '';
 
 <span class="apidocCodeCommentSpan">    /**
      * @type {TokenAssert}
      * @public
      */
 </span>    this.assert = new TokenAssert(file);
-    this.assert.on(&#x27;error&#x27;, this._addError.bind(this));
+    this.assert.on('error', this._addError.bind(this));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1611,7 +1604,7 @@
     } catch (e) {
         this._parseErrors.push(e);
         this._program = new Program([
-            new Token(&#x27;EOF&#x27;, &#x27;&#x27;)
+            new Token('EOF', '')
         ]);
     }
 
@@ -1660,7 +1653,7 @@
 
     if (this.maxErrorsEnabled()) {
         this._errorsFound += 1;
-        this._maxErrorsExceeded = this._errorsFound &#x3e;= this._maxErrors;
+        this._maxErrorsExceeded = this._errorsFound &gt;= this._maxErrors;
     }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -1688,13 +1681,13 @@
         try {
             rule.check(file, errors);
         } catch (e) {
-            errors.setCurrentRule(&#x27;internalError&#x27;);
+            errors.setCurrentRule('internalError');
             errors.add(getInternalErrorMessage(rule.getOptionName(), e), file.getProgram());
         }
     }, this);
 
     this._configuration.getUnsupportedRuleNames().forEach(function(rulename) {
-        errors.add(&#x27;Unsupported rule: &#x27; + rulename, file.getProgram());
+        errors.add('Unsupported rule: ' + rulename, file.getProgram());
     });
 
     var program = file.getProgram();
@@ -1722,7 +1715,7 @@
             this._maxErrorsExceeded = false;
 
         } else {
-            this._maxErrorsExceeded = this._errorsFound + errors.getErrorCount() &#x3e; this._maxErrors;
+            this._maxErrorsExceeded = this._errorsFound + errors.getErrorCount() &gt; this._maxErrors;
             errors.stripErrorList(Math.max(0, this._maxErrors - this._errorsFound));
         }
     }
@@ -1777,8 +1770,8 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">super_.prototype._fixCommonError = function (error) {
     if (error.fix) {
-        // &#x22;error.fixed = true&#x22; should go first, so rule can
-        // decide for itself (with &#x22;error.fixed = false&#x22;)
+        // "error.fixed = true" should go first, so rule can
+        // decide for itself (with "error.fixed = false")
         // if it can fix this particular error
         error.fixed = true;
         error.fix();
@@ -1837,9 +1830,9 @@
     var configuration = this.getConfiguration();
     var instance = configuration.getConfiguredRule(error.rule);
 
-    if (instance &#x26;&#x26; instance._fix) {
-        // &#x22;error.fixed = true&#x22; should go first, so rule can
-        // decide for itself (with &#x22;error.fixed = false&#x22;)
+    if (instance &amp;&amp; instance._fix) {
+        // "error.fixed = true" should go first, so rule can
+        // decide for itself (with "error.fixed = false")
         // if it can fix this particular error
         error.fixed = true;
         instance._fix(file, error);
@@ -1860,7 +1853,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">super_.prototype.checkString = function (source, filename) {
-    filename = filename || &#x27;input&#x27;;
+    filename = filename || 'input';
 
     var file = this._createJsFileInstance(filename, source);
 
@@ -1872,7 +1865,7 @@
         }
     }, this);
 
-    if (!file._program || file._program.firstChild.type === &#x27;EOF&#x27;) {
+    if (!file._program || file._program.firstChild.type === 'EOF') {
         return errors;
     }
 
@@ -1911,13 +1904,13 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">super_.prototype.fixString = function (source, filename) {
-    filename = filename || &#x27;input&#x27;;
+    filename = filename || 'input';
 
     var file = this._createJsFileInstance(filename, source);
     var errors = new Errors(file);
 
     var parseErrors = file.getParseErrors();
-    if (parseErrors.length &#x3e; 0) {
+    if (parseErrors.length &gt; 0) {
         parseErrors.forEach(function(parseError) {
             this._addParseError(errors, parseError, file);
         }, this);
@@ -1944,7 +1937,7 @@
             file = this._createJsFileInstance(filename, file.render());
             errors = new Errors(file);
             attempt++;
-        } while (attempt &#x3c; MAX_FIX_ATTEMPTS);
+        } while (attempt &lt; MAX_FIX_ATTEMPTS);
 
         return {output: file.getSource(), errors: errors};
     }
@@ -1992,7 +1985,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">super_.prototype.maxErrorsEnabled = function () {
-    return this._maxErrors !== null &#x26;&#x26; this._maxErrors !== -1;
+    return this._maxErrors !== null &amp;&amp; this._maxErrors !== -1;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2059,11 +2052,11 @@
 function renderLine(n, line, colorize) {
    // Convert tabs to spaces, so errors in code lines with tabs as indention symbol
    // could be correctly rendered, plus it will provide less verbose output
-   line = line.replace(/\t/g, &#x27; &#x27;);
+   line = line.replace(/\t/g, ' ');
 
-   // &#x22;n + 1&#x22; to print lines in human way (counted from 1)
-   var lineNumber = prependSpaces((n + 1).<span class="apidocCodeKeywordSpan">toString</span>(), 5) + &#x27; |&#x27;;
-   return &#x27; &#x27; + (colorize ? chalk.grey(lineNumber) : lineNumber) + line;
+   // "n + 1" to print lines in human way (counted from 1)
+   var lineNumber = prependSpaces((n + 1).<span class="apidocCodeKeywordSpan">toString</span>(), 5) + ' |';
+   return ' ' + (colorize ? chalk.grey(lineNumber) : lineNumber) + line;
 }
 
 /**
@@ -2121,14 +2114,14 @@ function renderLine(n, line, colorize) {
     <li>description and source-code<pre class="apidocCodePre">errors = function (file) {
     this._errorList = [];
     this._file = file;
-    this._currentRule = &#x27;&#x27;;
+    this._currentRule = '';
 
 <span class="apidocCodeCommentSpan">    /**
      * @type {TokenAssert}
      * @public
      */
 </span>    this.assert = new TokenAssert(file);
-    this.assert.on(&#x27;error&#x27;, this._addError.bind(this));
+    this.assert.on('error', this._addError.bind(this));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2153,12 +2146,12 @@ function renderLine(n, line, colorize) {
 
     if (offset === undefined) {
         // TODO: probably should be generalized
-        if (rule === &#x27;validateQuoteMarks&#x27;) {
+        if (rule === 'validateQuoteMarks') {
             offset = 0;
         } else if (element.getSourceCodeLength() === 1) {
             offset = 0;
         } else {
-            offset = (element.getNewlineCount() === 0 &#x26;&#x26; Math.ceil(element.getSourceCodeLength() / 2)) || 0;
+            offset = (element.getNewlineCount() === 0 &amp;&amp; Math.ceil(element.getSourceCodeLength() / 2)) || 0;
         }
     }
 
@@ -2172,7 +2165,7 @@ function renderLine(n, line, colorize) {
     }
 
     var newlineCount = element.getNewlineCount();
-    if (newlineCount &#x3e; 0) {
+    if (newlineCount &gt; 0) {
         var code = element.getSourceCode();
         LINE_SEPARATOR.lastIndex = 0;
         var lineOffset = 0;
@@ -2181,7 +2174,7 @@ function renderLine(n, line, colorize) {
         var firstLineColumnOffset = pos.column;
         while ((match = LINE_SEPARATOR.exec(code)) !== null) {
             var currentOffset = match.index;
-            if (offset &#x3c;= currentOffset) {
+            if (offset &lt;= currentOffset) {
                 return {
                     line: pos.line + lineOffset,
                     column: firstLineColumnOffset + offset - previousOffset
@@ -2278,7 +2271,7 @@ add: function(message, element, offset) {
     <li>description and source-code<pre class="apidocCodePre">_addParseError = function (errorInfo) {
     this._errorList.push({
         filename: this._file.getFilename(),
-        rule: &#x27;parseError&#x27;,
+        rule: 'parseError',
         message: errorInfo.message,
         line: errorInfo.loc ? errorInfo.loc.line : 1,
         column: errorInfo.loc ? errorInfo.loc.column : 0
@@ -2313,10 +2306,10 @@ this._addError({
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_prepareMessage = function (errorInfo) {
-    var rule = errorInfo instanceof Error ? &#x27;parseError&#x27; : this._currentRule;
+    var rule = errorInfo instanceof Error ? 'parseError' : this._currentRule;
 
     if (rule) {
-        return rule + &#x27;: &#x27; + errorInfo.message;
+        return rule + ': ' + errorInfo.message;
     }
 
     return errorInfo.message;
@@ -2416,17 +2409,17 @@ _addError: function(errorInfo) {
     ];
     var i = lineNumber - 1;
     var linesAround = 2;
-    while (i &#x3e;= 0 &#x26;&#x26; i &#x3e;= (lineNumber - linesAround)) {
+    while (i &gt;= 0 &amp;&amp; i &gt;= (lineNumber - linesAround)) {
         result.unshift(renderLine(i, lines[i], colorize));
         i--;
     }
     i = lineNumber + 1;
-    while (i &#x3c; lines.length &#x26;&#x26; i &#x3c;= (lineNumber + linesAround)) {
+    while (i &lt; lines.length &amp;&amp; i &lt;= (lineNumber + linesAround)) {
         result.push(renderLine(i, lines[i], colorize));
         i++;
     }
     result.unshift(formatErrorMessage(error.message, this.getFilename(), colorize));
-    return result.join(&#x27;\n&#x27;);
+    return result.join('\n');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2452,7 +2445,7 @@ _addError: function(errorInfo) {
  */
 getValidationErrorCount: function() {
     return this._errorList.<span class="apidocCodeKeywordSpan">filter</span>(function(error) {
-        return error.rule !== &#x27;parseError&#x27; &#x26;&#x26; error.rule !== &#x27;internalError&#x27;;
+        return error.rule !== 'parseError' &amp;&amp; error.rule !== 'internalError';
     });
 },
 
@@ -2513,7 +2506,7 @@ getValidationErrorCount: function() {
 _addParseError: function(errorInfo) {
     this._errorList.push({
         filename: this._file.<span class="apidocCodeKeywordSpan">getFilename</span>(),
-        rule: &#x27;parseError&#x27;,
+        rule: 'parseError',
         message: errorInfo.message,
         line: errorInfo.loc ? errorInfo.loc.line : 1,
         column: errorInfo.loc ? errorInfo.loc.column : 0
@@ -2533,7 +2526,7 @@ _addParseError: function(errorInfo) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getValidationErrorCount = function () {
     return this._errorList.filter(function(error) {
-        return error.rule !== &#x27;parseError&#x27; &#x26;&#x26; error.rule !== &#x27;internalError&#x27;;
+        return error.rule !== 'parseError' &amp;&amp; error.rule !== 'internalError';
     });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2681,7 +2674,7 @@ _addParseError: function(errorInfo) {
     } catch (e) {
         this._parseErrors.push(e);
         this._program = new Program([
-            new Token(&#x27;EOF&#x27;, &#x27;&#x27;)
+            new Token('EOF', '')
         ]);
     }
 
@@ -2748,7 +2741,7 @@ while (grandpa) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">findNextOperatorToken = function (token, value) {
-    return this.findNextToken(token, value in KEYWORD_OPERATORS ? &#x27;Keyword&#x27; : &#x27;Punctuator&#x27;, value);
+    return this.findNextToken(token, value in KEYWORD_OPERATORS ? 'Keyword' : 'Punctuator', value);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2766,7 +2759,7 @@ while (grandpa) {
     var nextToken = token.getNextToken();
 
     while (nextToken) {
-        if (nextToken.type === type &#x26;&#x26; (value === undefined || nextToken.value === value)) {
+        if (nextToken.type === type &amp;&amp; (value === undefined || nextToken.value === value)) {
             return nextToken;
         }
 
@@ -2782,8 +2775,8 @@ while (grandpa) {
  * @returns {Object|null}
  */
 findNextOperatorToken: function(token, value) {
-    return this.<span class="apidocCodeKeywordSpan">findNextToken</span>(token, value in KEYWORD_OPERATORS ? &#x27;Keyword&#x27; : &#
-x27;Punctuator&#x27;, value);
+    return this.<span class="apidocCodeKeywordSpan">findNextToken</span>(token, value in KEYWORD_OPERATORS ? 'Keyword' : &amp;#
+x27;Punctuator', value);
 },
 
 /**
@@ -2804,7 +2797,7 @@ x27;Punctuator&#x27;, value);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">findPrevOperatorToken = function (token, value) {
-    return this.findPrevToken(token, value in KEYWORD_OPERATORS ? &#x27;Keyword&#x27; : &#x27;Punctuator&#x27;, value);
+    return this.findPrevToken(token, value in KEYWORD_OPERATORS ? 'Keyword' : 'Punctuator', value);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2821,7 +2814,7 @@ x27;Punctuator&#x27;, value);
     <li>description and source-code<pre class="apidocCodePre">findPrevToken = function (token, type, value) {
     var prevToken = this.getPrevToken(token);
     while (prevToken) {
-        if (prevToken.type === type &#x26;&#x26; (value === undefined || prevToken.value === value)) {
+        if (prevToken.type === type &amp;&amp; (value === undefined || prevToken.value === value)) {
             return prevToken;
         }
 
@@ -2837,8 +2830,8 @@ x27;Punctuator&#x27;, value);
  * @returns {Object|null}
  */
 findPrevOperatorToken: function(token, value) {
-    return this.<span class="apidocCodeKeywordSpan">findPrevToken</span>(token, value in KEYWORD_OPERATORS ? &#x27;Keyword&#x27; : &#
-x27;Punctuator&#x27;, value);
+    return this.<span class="apidocCodeKeywordSpan">findPrevToken</span>(token, value in KEYWORD_OPERATORS ? 'Keyword' : &amp;#
+x27;Punctuator', value);
 },
 
 /**
@@ -2898,10 +2891,10 @@ this.<span class="apidocCodeKeywordSpan">getComments</span>().concat().reverse()
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getDialect = function () {
     if (this._es3) {
-        return &#x27;es3&#x27;;
+        return 'es3';
     }
 
-    return &#x27;es6&#x27;;
+    return 'es6';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2943,12 +2936,12 @@ this.<span class="apidocCodeKeywordSpan">getComments</span>().concat().reverse()
 
 var spacesBetween = this._file.<span class="apidocCodeKeywordSpan">getDistanceBetween</span>(token, nextToken);
 
-if (atLeast !== undefined &#x26;&#x26; spacesBetween &#x3c; atLeast) {
-    emitError(&#x27;at least&#x27;, atLeast);
+if (atLeast !== undefined &amp;&amp; spacesBetween &lt; atLeast) {
+    emitError('at least', atLeast);
     return true;
 }
 
-if (atMost !== undefined &#x26;&#x26; spacesBetween &#x3e; atMost) {
+if (atMost !== undefined &amp;&amp; spacesBetween &gt; atMost) {
 ...</pre></li>
     </ul>
 
@@ -2973,7 +2966,7 @@ if (atMost !== undefined &#x26;&#x26; spacesBetween &#x3e; atMost) {
 _addParseError: function(errorInfo) {
     this._errorList.push({
         filename: this._file.<span class="apidocCodeKeywordSpan">getFilename</span>(),
-        rule: &#x27;parseError&#x27;,
+        rule: 'parseError',
         message: errorInfo.message,
         line: errorInfo.loc ? errorInfo.loc.line : 1,
         column: errorInfo.loc ? errorInfo.loc.column : 0
@@ -3041,18 +3034,18 @@ getFirstNodeToken: function(node) {
     options = options || {};
     var firstToken = element;
 
-    if (element.isComment &#x26;&#x26; !options.includeComments) {
+    if (element.isComment &amp;&amp; !options.includeComments) {
         firstToken = null;
     }
 
-    if (element.isWhitespace &#x26;&#x26; !options.includeWhitespace) {
+    if (element.isWhitespace &amp;&amp; !options.includeWhitespace) {
         firstToken = null;
     }
 
     var currentToken = element.getPreviousToken();
     while (currentToken) {
         if (currentToken.isWhitespace) {
-            if (currentToken.getNewlineCount() &#x3e; 0 || !currentToken.getPreviousToken()) {
+            if (currentToken.getNewlineCount() &gt; 0 || !currentToken.getPreviousToken()) {
                 if (options.includeWhitespace) {
                     firstToken = currentToken;
                 }
@@ -3063,7 +3056,7 @@ getFirstNodeToken: function(node) {
                 firstToken = currentToken;
                 break;
             }
-            if (currentToken.getNewlineCount() &#x3e; 0) {
+            if (currentToken.getNewlineCount() &gt; 0) {
                 break;
             }
         } else {
@@ -3080,7 +3073,7 @@ getFirstNodeToken: function(node) {
     currentToken = element.getNextToken();
     while (currentToken) {
         if (currentToken.isWhitespace) {
-            if (currentToken.getNewlineCount() &#x3e; 0 || !currentToken.getNextToken()) {
+            if (currentToken.getNewlineCount() &gt; 0 || !currentToken.getNextToken()) {
                 if (options.includeWhitespace) {
                     firstToken = currentToken;
                 }
@@ -3091,7 +3084,7 @@ getFirstNodeToken: function(node) {
                 firstToken = currentToken;
                 break;
             }
-            if (currentToken.getNewlineCount() &#x3e; 0) {
+            if (currentToken.getNewlineCount() &gt; 0) {
                 break;
             }
         } else {
@@ -3173,17 +3166,17 @@ getLastNodeToken: function(node) {
         currentToken = token;
         token = token.getPreviousToken();
 
-        if (loc.start.line &#x3c;= lineNumber &#x26;&#x26; loc.end.line &#x3e;= lineNumber) {
+        if (loc.start.line &lt;= lineNumber &amp;&amp; loc.end.line &gt;= lineNumber) {
 
             // Since whitespace tokens can contain newlines we need to check
             // if position is in the range, not exact match
-            if (currentToken.isWhitespace &#x26;&#x26; !options.includeWhitespace) {
+            if (currentToken.isWhitespace &amp;&amp; !options.includeWhitespace) {
                 continue;
             }
         }
 
         if (loc.start.line === lineNumber || loc.end.line === lineNumber) {
-            if (currentToken.isComment &#x26;&#x26; !options.includeComments) {
+            if (currentToken.isComment &amp;&amp; !options.includeComments) {
                 continue;
             }
 
@@ -3207,7 +3200,7 @@ getLastNodeToken: function(node) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getLineBreakStyle = function () {
     var lineBreaks = this.getLineBreaks();
-    return lineBreaks.length ? lineBreaks[0] : &#x27;\n&#x27;;
+    return lineBreaks.length ? lineBreaks[0] : '\n';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
  * Updates the whitespace of a line by passing split lines to a callback function
@@ -3252,7 +3245,7 @@ TokenAssert.prototype._updateWhitespaceByLine = function(token, callback) {
  */
 getLineBreakStyle: function() {
     var lineBreaks = this.<span class="apidocCodeKeywordSpan">getLineBreaks</span>();
-    return lineBreaks.length ? lineBreaks[0] : &#x27;\n&#x27;;
+    return lineBreaks.length ? lineBreaks[0] : '\n';
 },
 
 /**
@@ -3301,7 +3294,7 @@ getLineBreakStyle: function() {
     var linesBetween = this._file.<span class="apidocCodeKeywordSpan">getLineCountBetween</span>(token, nextToken);
 
     var emitError = function(countPrefix, lineCount) {
-var msgPrefix = token.value + &#x27; and &#x27; + nextToken.value;
+var msgPrefix = token.value + ' and ' + nextToken.value;
 
 var fix = function() {
     this._augmentLineCount(options, lineCount);
@@ -3336,7 +3329,7 @@ explainError: function(error, colorize) {
     ];
     var i = lineNumber - 1;
     var linesAround = 2;
-    while (i &#x3e;= 0 &#x26;&#x26; i &#x3e;= (lineNumber - linesAround)) {
+    while (i &gt;= 0 &amp;&amp; i &gt;= (lineNumber - linesAround)) {
 ...</pre></li>
     </ul>
 
@@ -3362,12 +3355,12 @@ explainError: function(error, colorize) {
 
         if (startLine === endLine) {
             // Remove tralling spaces (see gh-1968)
-            lines[i] = lines[i].replace(/\*\/\s+/, &#x27;\*\/&#x27;);
+            lines[i] = lines[i].replace(/\*\/\s+/, '\*\/');
             lines[i] = lines[i].substring(0, startCol) + lines[i].substring(endCol);
         } else {
             lines[i] = lines[i].substring(0, startCol);
-            for (var x = i + 1; x &#x3c; endLine - 1; x++) {
-                lines[x] = &#x27;&#x27;;
+            for (var x = i + 1; x &lt; endLine - 1; x++) {
+                lines[x] = '';
             }
 
             lines[x] = lines[x].substring(endCol);
@@ -3389,7 +3382,7 @@ explainError: function(error, colorize) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getNextToken = function (token, options) {
-    if (options &#x26;&#x26; options.includeComments) {
+    if (options &amp;&amp; options.includeComments) {
         return token.getNextNonWhitespaceToken();
     } else {
         return token.getNextCodeToken();
@@ -3406,7 +3399,7 @@ explainError: function(error, colorize) {
         var nextToken = token.<span class="apidocCodeKeywordSpan">getNextToken</span>();
 
         while (nextToken) {
-if (nextToken.type === type &#x26;&#x26; (value === undefined || nextToken.value === value)) {
+if (nextToken.type === type &amp;&amp; (value === undefined || nextToken.value === value)) {
     return nextToken;
 }
 
@@ -3427,7 +3420,7 @@ nextToken = nextToken.getNextToken();
     type = Array.isArray(type) ? type : [type];
     var result = [];
 
-    for (var i = 0, l = type.length; i &#x3c; l; i++) {
+    for (var i = 0, l = type.length; i &lt; l; i++) {
         var nodes = this._program.selectNodesByType(type[i]);
 
         if (nodes) {
@@ -3481,7 +3474,7 @@ iterateNodesByType: function(type, cb, context) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getPrevToken = function (token, options) {
-    if (options &#x26;&#x26; options.includeComments) {
+    if (options &amp;&amp; options.includeComments) {
         return token.getPreviousNonWhitespaceToken();
     }
 
@@ -3497,7 +3490,7 @@ iterateNodesByType: function(type, cb, context) {
     findPrevToken: function(token, type, value) {
 var prevToken = this.<span class="apidocCodeKeywordSpan">getPrevToken</span>(token);
 while (prevToken) {
-    if (prevToken.type === type &#x26;&#x26; (value === undefined || prevToken.value === value)) {
+    if (prevToken.type === type &amp;&amp; (value === undefined || prevToken.value === value)) {
         return prevToken;
     }
 
@@ -3585,11 +3578,11 @@ while (prevToken) {
     }
     var prev = token.getPreviousToken();
 
-    if (prev &#x26;&#x26; prev.isWhitespace) {
+    if (prev &amp;&amp; prev.isWhitespace) {
         return prev.getSourceCode();
     }
 
-    return &#x27;&#x27;;
+    return '';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 * for editing.
@@ -3630,7 +3623,7 @@ TokenAssert.prototype._updateWhitespaceByLine = function(token, callback) {
         if (currentToken === tokenAfter) {
             return true;
         }
-        if (currentToken !== tokenBefore &#x26;&#x26; currentToken.getNewlineCount() &#x3e; 0) {
+        if (currentToken !== tokenBefore &amp;&amp; currentToken.getNewlineCount() &gt; 0) {
             return false;
         }
         currentToken = currentToken.getNextToken();
@@ -3645,7 +3638,7 @@ if (!token || !nextToken) {
 
 this._validateOptions(options);
 
-if (!options.disallowNewLine &#x26;&#x26; !this._file.<span class="apidocCodeKeywordSpan">isOnTheSameLine</span>(token, nextToken
+if (!options.disallowNewLine &amp;&amp; !this._file.<span class="apidocCodeKeywordSpan">isOnTheSameLine</span>(token, nextToken
 )) {
     return false;
 }
@@ -3716,7 +3709,7 @@ iterate: function(cb, tree) {
 
     if (Array.isArray(type)) {
         tokens = [];
-        for (var i = 0; i &#x3c; type.length; i++) {
+        for (var i = 0; i &lt; type.length; i++) {
             var items = this._program.selectTokensByType(type[i]);
             tokens = tokens.concat(items);
         }
@@ -3728,7 +3721,7 @@ iterate: function(cb, tree) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 iterateTokensByTypeAndValue: function(type, value, cb) {
-    var values = (typeof value === &#x27;string&#x27;) ? [value] : value;
+    var values = (typeof value === 'string') ? [value] : value;
     var valueIndex = {};
     values.forEach(function(type) {
         valueIndex[type] = true;
@@ -3755,7 +3748,7 @@ getFirstTokenOnLineWith: function(element, options) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">iterateTokensByTypeAndValue = function (type, value, cb) {
-    var values = (typeof value === &#x27;string&#x27;) ? [value] : value;
+    var values = (typeof value === 'string') ? [value] : value;
     var valueIndex = {};
     values.forEach(function(type) {
         valueIndex[type] = true;
@@ -3796,11 +3789,11 @@ getFirstTokenOnLineWith: function(element, options) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">setWhitespaceBefore = function (token, whitespace) {
     var prevToken = token.getPreviousToken();
-    var ws = new Token(&#x27;Whitespace&#x27;, whitespace);
+    var ws = new Token('Whitespace', whitespace);
     var fragment = new Fragment(ws);
 
-    if (prevToken &#x26;&#x26; prevToken.isWhitespace) {
-        if (whitespace === &#x27;&#x27;) {
+    if (prevToken &amp;&amp; prevToken.isWhitespace) {
+        if (whitespace === '') {
             prevToken.remove();
             return;
         }
@@ -3819,11 +3812,11 @@ getFirstTokenOnLineWith: function(element, options) {
 
     var emitError = function(countPrefix, spaceCount) {
 var fix = function() {
-    this._file.<span class="apidocCodeKeywordSpan">setWhitespaceBefore</span>(nextToken, new Array(spaceCount + 1).join(&#x27; &#
+    this._file.<span class="apidocCodeKeywordSpan">setWhitespaceBefore</span>(nextToken, new Array(spaceCount + 1).join(' &amp;#
 x27;));
 }.bind(this);
 
-var msgPostfix = token.value + &#x27; and &#x27; + nextToken.value;
+var msgPostfix = token.value + ' and ' + nextToken.value;
 
 if (!options.message) {
     if (exactly === 0) {
@@ -3880,7 +3873,7 @@ if (!options.message) {
 
     if (this.maxErrorsEnabled()) {
         this._errorsFound += 1;
-        this._maxErrorsExceeded = this._errorsFound &#x3e;= this._maxErrors;
+        this._maxErrorsExceeded = this._errorsFound &gt;= this._maxErrors;
     }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -3924,13 +3917,13 @@ this._addError({
         try {
             rule.check(file, errors);
         } catch (e) {
-            errors.setCurrentRule(&#x27;internalError&#x27;);
+            errors.setCurrentRule('internalError');
             errors.add(getInternalErrorMessage(rule.getOptionName(), e), file.getProgram());
         }
     }, this);
 
     this._configuration.getUnsupportedRuleNames().forEach(function(rulename) {
-        errors.add(&#x27;Unsupported rule: &#x27; + rulename, file.getProgram());
+        errors.add('Unsupported rule: ' + rulename, file.getProgram());
     });
 
     var program = file.getProgram();
@@ -3958,7 +3951,7 @@ this._addError({
             this._maxErrorsExceeded = false;
 
         } else {
-            this._maxErrorsExceeded = this._errorsFound + errors.getErrorCount() &#x3e; this._maxErrors;
+            this._maxErrorsExceeded = this._errorsFound + errors.getErrorCount() &gt; this._maxErrors;
             errors.stripErrorList(Math.max(0, this._maxErrors - this._errorsFound));
         }
     }
@@ -4013,8 +4006,8 @@ this._addError({
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_fixCommonError = function (error) {
     if (error.fix) {
-        // &#x22;error.fixed = true&#x22; should go first, so rule can
-        // decide for itself (with &#x22;error.fixed = false&#x22;)
+        // "error.fixed = true" should go first, so rule can
+        // decide for itself (with "error.fixed = false")
         // if it can fix this particular error
         error.fixed = true;
         error.fix();
@@ -4073,9 +4066,9 @@ this._addError({
     var configuration = this.getConfiguration();
     var instance = configuration.getConfiguredRule(error.rule);
 
-    if (instance &#x26;&#x26; instance._fix) {
-        // &#x22;error.fixed = true&#x22; should go first, so rule can
-        // decide for itself (with &#x22;error.fixed = false&#x22;)
+    if (instance &amp;&amp; instance._fix) {
+        // "error.fixed = true" should go first, so rule can
+        // decide for itself (with "error.fixed = false")
         // if it can fix this particular error
         error.fixed = true;
         instance._fix(file, error);
@@ -4096,7 +4089,7 @@ this._addError({
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">checkString = function (source, filename) {
-    filename = filename || &#x27;input&#x27;;
+    filename = filename || 'input';
 
     var file = this._createJsFileInstance(filename, source);
 
@@ -4108,7 +4101,7 @@ this._addError({
         }
     }, this);
 
-    if (!file._program || file._program.firstChild.type === &#x27;EOF&#x27;) {
+    if (!file._program || file._program.firstChild.type === 'EOF') {
         return errors;
     }
 
@@ -4147,13 +4140,13 @@ this._addError({
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">fixString = function (source, filename) {
-    filename = filename || &#x27;input&#x27;;
+    filename = filename || 'input';
 
     var file = this._createJsFileInstance(filename, source);
     var errors = new Errors(file);
 
     var parseErrors = file.getParseErrors();
-    if (parseErrors.length &#x3e; 0) {
+    if (parseErrors.length &gt; 0) {
         parseErrors.forEach(function(parseError) {
             this._addParseError(errors, parseError, file);
         }, this);
@@ -4180,7 +4173,7 @@ this._addError({
             file = this._createJsFileInstance(filename, file.render());
             errors = new Errors(file);
             attempt++;
-        } while (attempt &#x3c; MAX_FIX_ATTEMPTS);
+        } while (attempt &lt; MAX_FIX_ATTEMPTS);
 
         return {output: file.getSource(), errors: errors};
     }
@@ -4228,7 +4221,7 @@ this._addError({
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">maxErrorsEnabled = function () {
-    return this._maxErrors !== null &#x26;&#x26; this._maxErrors !== -1;
+    return this._maxErrors !== null &amp;&amp; this._maxErrors !== -1;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -4301,7 +4294,7 @@ this._addError({
 
     if (this.maxErrorsEnabled()) {
         this._errorsFound += 1;
-        this._maxErrorsExceeded = this._errorsFound &#x3e;= this._maxErrors;
+        this._maxErrorsExceeded = this._errorsFound &gt;= this._maxErrors;
     }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -4350,13 +4343,13 @@ this._addError({
         try {
             rule.check(file, errors);
         } catch (e) {
-            errors.setCurrentRule(&#x27;internalError&#x27;);
+            errors.setCurrentRule('internalError');
             errors.add(getInternalErrorMessage(rule.getOptionName(), e), file.getProgram());
         }
     }, this);
 
     this._configuration.getUnsupportedRuleNames().forEach(function(rulename) {
-        errors.add(&#x27;Unsupported rule: &#x27; + rulename, file.getProgram());
+        errors.add('Unsupported rule: ' + rulename, file.getProgram());
     });
 
     var program = file.getProgram();
@@ -4384,7 +4377,7 @@ this._addError({
             this._maxErrorsExceeded = false;
 
         } else {
-            this._maxErrorsExceeded = this._errorsFound + errors.getErrorCount() &#x3e; this._maxErrors;
+            this._maxErrorsExceeded = this._errorsFound + errors.getErrorCount() &gt; this._maxErrors;
             errors.stripErrorList(Math.max(0, this._maxErrors - this._errorsFound));
         }
     }
@@ -4454,8 +4447,8 @@ this._addError({
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_fixCommonError = function (error) {
     if (error.fix) {
-        // &#x22;error.fixed = true&#x22; should go first, so rule can
-        // decide for itself (with &#x22;error.fixed = false&#x22;)
+        // "error.fixed = true" should go first, so rule can
+        // decide for itself (with "error.fixed = false")
         // if it can fix this particular error
         error.fixed = true;
         error.fix();
@@ -4524,9 +4517,9 @@ this._addError({
     var configuration = this.getConfiguration();
     var instance = configuration.getConfiguredRule(error.rule);
 
-    if (instance &#x26;&#x26; instance._fix) {
-        // &#x22;error.fixed = true&#x22; should go first, so rule can
-        // decide for itself (with &#x22;error.fixed = false&#x22;)
+    if (instance &amp;&amp; instance._fix) {
+        // "error.fixed = true" should go first, so rule can
+        // decide for itself (with "error.fixed = false")
         // if it can fix this particular error
         error.fixed = true;
         instance._fix(file, error);
@@ -4552,7 +4545,7 @@ this._addError({
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">checkString = function (source, filename) {
-    filename = filename || &#x27;input&#x27;;
+    filename = filename || 'input';
 
     var file = this._createJsFileInstance(filename, source);
 
@@ -4564,7 +4557,7 @@ this._addError({
         }
     }, this);
 
-    if (!file._program || file._program.firstChild.type === &#x27;EOF&#x27;) {
+    if (!file._program || file._program.firstChild.type === 'EOF') {
         return errors;
     }
 
@@ -4613,13 +4606,13 @@ this._addError({
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">fixString = function (source, filename) {
-    filename = filename || &#x27;input&#x27;;
+    filename = filename || 'input';
 
     var file = this._createJsFileInstance(filename, source);
     var errors = new Errors(file);
 
     var parseErrors = file.getParseErrors();
-    if (parseErrors.length &#x3e; 0) {
+    if (parseErrors.length &gt; 0) {
         parseErrors.forEach(function(parseError) {
             this._addParseError(errors, parseError, file);
         }, this);
@@ -4646,7 +4639,7 @@ this._addError({
             file = this._createJsFileInstance(filename, file.render());
             errors = new Errors(file);
             attempt++;
-        } while (attempt &#x3c; MAX_FIX_ATTEMPTS);
+        } while (attempt &lt; MAX_FIX_ATTEMPTS);
 
         return {output: file.getSource(), errors: errors};
     }
@@ -4709,7 +4702,7 @@ this._addError({
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">maxErrorsEnabled = function () {
-    return this._maxErrors !== null &#x26;&#x26; this._maxErrors !== -1;
+    return this._maxErrors !== null &amp;&amp; this._maxErrors !== -1;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -4794,11 +4787,11 @@ this._addError({
 function renderLine(n, line, colorize) {
    // Convert tabs to spaces, so errors in code lines with tabs as indention symbol
    // could be correctly rendered, plus it will provide less verbose output
-   line = line.replace(/\t/g, &#x27; &#x27;);
+   line = line.replace(/\t/g, ' ');
 
-   // &#x22;n + 1&#x22; to print lines in human way (counted from 1)
-   var lineNumber = prependSpaces((n + 1).<span class="apidocCodeKeywordSpan">toString</span>(), 5) + &#x27; |&#x27;;
-   return &#x27; &#x27; + (colorize ? chalk.grey(lineNumber) : lineNumber) + line;
+   // "n + 1" to print lines in human way (counted from 1)
+   var lineNumber = prependSpaces((n + 1).<span class="apidocCodeKeywordSpan">toString</span>(), 5) + ' |';
+   return ' ' + (colorize ? chalk.grey(lineNumber) : lineNumber) + line;
 }
 
 /**
@@ -4869,7 +4862,7 @@ function renderLine(n, line, colorize) {
             this._file.setWhitespaceBefore(nextToken, this._file.getWhitespaceBefore(token));
         }
 
-        this._file.setWhitespaceBefore(token, &#x27; &#x27;);
+        this._file.setWhitespaceBefore(token, ' ');
         return;
     }
 
@@ -4877,10 +4870,10 @@ function renderLine(n, line, colorize) {
         var currentLineCount = lines.length;
         var lastLine = lines[lines.length - 1];
 
-        if (currentLineCount &#x3c;= lineCount) {
+        if (currentLineCount &lt;= lineCount) {
             // add additional lines that maintain the same indentation as the former last line
-            for (; currentLineCount &#x3c;= lineCount; currentLineCount++) {
-                lines[lines.length - 1] = &#x27;&#x27;;
+            for (; currentLineCount &lt;= lineCount; currentLineCount++) {
+                lines[lines.length - 1] = '';
                 lines.push(lastLine);
             }
         } else {
@@ -4897,7 +4890,7 @@ function renderLine(n, line, colorize) {
     var linesBetween = this._file.getLineCountBetween(token, nextToken);
 
     var emitError = function(countPrefix, lineCount) {
-var msgPrefix = token.value + &#x27; and &#x27; + nextToken.value;
+var msgPrefix = token.value + ' and ' + nextToken.value;
 
 var fix = function() {
     this.<span class="apidocCodeKeywordSpan">_augmentLineCount</span>(options, lineCount);
@@ -4906,8 +4899,8 @@ var fix = function() {
 if (!options.message) {
     if (exactly === 0) {
         // support sameLine
-        options.message = msgPrefix + &#x27; should be on the same line&#x27;;
-    } else if (atLeast === 1 &#x26;&#x26; atMost === undefined) {
+        options.message = msgPrefix + ' should be on the same line';
+    } else if (atLeast === 1 &amp;&amp; atMost === undefined) {
 ...</pre></li>
     </ul>
 
@@ -4924,18 +4917,18 @@ if (!options.message) {
     var difference = expected - actual;
     var tokenLines = token.value.split(/\r\n|\r|\n/);
     var i = 1;
-    if (difference &#x3e;= 0) {
+    if (difference &gt;= 0) {
         var lineWhitespace = (new Array(difference + 1)).join(indentChar);
-        for (; i &#x3c; tokenLines.length; i++) {
-            tokenLines[i] = tokenLines[i] === &#x27;&#x27; ? &#x27;&#x27; : lineWhitespace + tokenLines[i];
+        for (; i &lt; tokenLines.length; i++) {
+            tokenLines[i] = tokenLines[i] === '' ? '' : lineWhitespace + tokenLines[i];
         }
     } else {
-        for (; i &#x3c; tokenLines.length; i++) {
+        for (; i &lt; tokenLines.length; i++) {
             tokenLines[i] = tokenLines[i].substring(-difference);
         }
     }
 
-    var newComment = new Token(&#x27;CommentBlock&#x27;, tokenLines.join(this._file.getLineBreakStyle()));
+    var newComment = new Token('CommentBlock', tokenLines.join(this._file.getLineBreakStyle()));
     token.parentElement.replaceChild(newComment, token);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -4973,8 +4966,8 @@ if (!options.message) {
     this._file.setWhitespaceBefore(token, lines.join(lineBreak));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-    this.emit(&#x27;error&#x27;, {
-        message: &#x27;Expected indentation of &#x27; + expected + &#x27; characters&#x27;,
+    this.emit('error', {
+        message: 'Expected indentation of ' + expected + ' characters',
         line: lineNumber,
         column: expected,
         fix: function() {
@@ -5008,21 +5001,21 @@ if (token.isComment) {
     var exactly = options.exactly;
 
     if (token === nextToken) {
-        throw new Error(&#x27;You cannot specify the same token as both token and nextToken&#x27;);
+        throw new Error('You cannot specify the same token as both token and nextToken');
     }
 
-    if (atLeast === undefined &#x26;&#x26;
-        atMost === undefined &#x26;&#x26;
+    if (atLeast === undefined &amp;&amp;
+        atMost === undefined &amp;&amp;
         exactly === undefined) {
-        throw new Error(&#x27;You must specify at least one option&#x27;);
+        throw new Error('You must specify at least one option');
     }
 
-    if (exactly !== undefined &#x26;&#x26; (atLeast !== undefined || atMost !== undefined)) {
-        throw new Error(&#x27;You cannot specify atLeast or atMost with exactly&#x27;);
+    if (exactly !== undefined &amp;&amp; (atLeast !== undefined || atMost !== undefined)) {
+        throw new Error('You cannot specify atLeast or atMost with exactly');
     }
 
-    if (atLeast !== undefined &#x26;&#x26; atMost !== undefined &#x26;&#x26; atMost &#x3c; atLeast) {
-        throw new Error(&#x27;atLeast and atMost are in conflict&#x27;);
+    if (atLeast !== undefined &amp;&amp; atMost !== undefined &amp;&amp; atMost &lt; atLeast) {
+        throw new Error('atLeast and atMost are in conflict');
     }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -5035,7 +5028,7 @@ if (!token || !nextToken) {
 
 this.<span class="apidocCodeKeywordSpan">_validateOptions</span>(options);
 
-if (!options.disallowNewLine &#x26;&#x26; !this._file.isOnTheSameLine(token, nextToken)) {
+if (!options.disallowNewLine &amp;&amp; !this._file.isOnTheSameLine(token, nextToken)) {
     return false;
 }
 
@@ -5081,8 +5074,8 @@ if (!options.disallowNewLine &#x26;&#x26; !this._file.isOnTheSameLine(token, nex
         return false;
     }
 
-    this.emit(&#x27;error&#x27;, {
-        message: &#x27;Expected indentation of &#x27; + expected + &#x27; characters&#x27;,
+    this.emit('error', {
+        message: 'Expected indentation of ' + expected + ' characters',
         line: lineNumber,
         column: expected,
         fix: function() {
@@ -5133,7 +5126,7 @@ if (!options.disallowNewLine &#x26;&#x26; !this._file.isOnTheSameLine(token, nex
     var linesBetween = this._file.getLineCountBetween(token, nextToken);
 
     var emitError = function(countPrefix, lineCount) {
-        var msgPrefix = token.value + &#x27; and &#x27; + nextToken.value;
+        var msgPrefix = token.value + ' and ' + nextToken.value;
 
         var fix = function() {
             this._augmentLineCount(options, lineCount);
@@ -5142,17 +5135,17 @@ if (!options.disallowNewLine &#x26;&#x26; !this._file.isOnTheSameLine(token, nex
         if (!options.message) {
             if (exactly === 0) {
                 // support sameLine
-                options.message = msgPrefix + &#x27; should be on the same line&#x27;;
-            } else if (atLeast === 1 &#x26;&#x26; atMost === undefined) {
+                options.message = msgPrefix + ' should be on the same line';
+            } else if (atLeast === 1 &amp;&amp; atMost === undefined) {
                 // support differentLine
-                options.message = msgPrefix + &#x27; should be on different lines&#x27;;
+                options.message = msgPrefix + ' should be on different lines';
             } else {
                 // support linesBetween
-                options.message = msgPrefix + &#x27; should have &#x27; + countPrefix + &#x27; &#x27; + lineCount + &#x27; line(s) between them&#x27;;
+                options.message = msgPrefix + ' should have ' + countPrefix + ' ' + lineCount + ' line(s) between them';
             }
         }
 
-        this.emit(&#x27;error&#x27;, {
+        this.emit('error', {
             message: options.message,
             element: token,
             offset: token.getSourceCodeLength(),
@@ -5160,18 +5153,18 @@ if (!options.disallowNewLine &#x26;&#x26; !this._file.isOnTheSameLine(token, nex
         });
     }.bind(this);
 
-    if (atLeast !== undefined &#x26;&#x26; linesBetween &#x3c; atLeast) {
-        emitError(&#x27;at least&#x27;, atLeast);
+    if (atLeast !== undefined &amp;&amp; linesBetween &lt; atLeast) {
+        emitError('at least', atLeast);
         return true;
     }
 
-    if (atMost !== undefined &#x26;&#x26; linesBetween &#x3e; atMost) {
-        emitError(&#x27;at most&#x27;, atMost);
+    if (atMost !== undefined &amp;&amp; linesBetween &gt; atMost) {
+        emitError('at most', atMost);
         return true;
     }
 
-    if (exactly !== undefined &#x26;&#x26; linesBetween !== exactly) {
-        emitError(&#x27;exactly&#x27;, exactly);
+    if (exactly !== undefined &amp;&amp; linesBetween !== exactly) {
+        emitError('exactly', exactly);
         return true;
     }
 
@@ -5251,7 +5244,7 @@ TokenAssert.prototype.sameLine = function(options) {
 
     this._validateOptions(options);
 
-    if (!options.disallowNewLine &#x26;&#x26; !this._file.isOnTheSameLine(token, nextToken)) {
+    if (!options.disallowNewLine &amp;&amp; !this._file.isOnTheSameLine(token, nextToken)) {
         return false;
     }
 
@@ -5261,27 +5254,27 @@ TokenAssert.prototype.sameLine = function(options) {
 
     var emitError = function(countPrefix, spaceCount) {
         var fix = function() {
-            this._file.setWhitespaceBefore(nextToken, new Array(spaceCount + 1).join(&#x27; &#x27;));
+            this._file.setWhitespaceBefore(nextToken, new Array(spaceCount + 1).join(' '));
         }.bind(this);
 
-        var msgPostfix = token.value + &#x27; and &#x27; + nextToken.value;
+        var msgPostfix = token.value + ' and ' + nextToken.value;
 
         if (!options.message) {
             if (exactly === 0) {
                 // support noWhitespaceBetween
-                options.message = &#x27;Unexpected whitespace between &#x27; + msgPostfix;
+                options.message = 'Unexpected whitespace between ' + msgPostfix;
             } else if (exactly !== undefined) {
                 // support whitespaceBetween (spaces option)
-                options.message = spaceCount + &#x27; spaces required between &#x27; + msgPostfix;
-            } else if (atLeast === 1 &#x26;&#x26; atMost === undefined) {
+                options.message = spaceCount + ' spaces required between ' + msgPostfix;
+            } else if (atLeast === 1 &amp;&amp; atMost === undefined) {
                 // support whitespaceBetween (no spaces option)
-                options.message = &#x27;Missing space between &#x27; + msgPostfix;
+                options.message = 'Missing space between ' + msgPostfix;
             } else {
-                options.message = countPrefix + &#x27; &#x27; + spaceCount + &#x27; spaces required between &#x27; + msgPostfix;
+                options.message = countPrefix + ' ' + spaceCount + ' spaces required between ' + msgPostfix;
             }
         }
 
-        this.emit(&#x27;error&#x27;, {
+        this.emit('error', {
             message: options.message,
             element: token,
             offset: token.getSourceCodeLength(),
@@ -5291,18 +5284,18 @@ TokenAssert.prototype.sameLine = function(options) {
 
     var spacesBetween = this._file.getDistanceBetween(token, nextToken);
 
-    if (atLeast !== undefined &#x26;&#x26; spacesBetween &#x3c; atLeast) {
-        emitError(&#x27;at least&#x27;, atLeast);
+    if (atLeast !== undefined &amp;&amp; spacesBetween &lt; atLeast) {
+        emitError('at least', atLeast);
         return true;
     }
 
-    if (atMost !== undefined &#x26;&#x26; spacesBetween &#x3e; atMost) {
-        emitError(&#x27;at most&#x27;, atMost);
+    if (atMost !== undefined &amp;&amp; spacesBetween &gt; atMost) {
+        emitError('at most', atMost);
         return true;
     }
 
-    if (exactly !== undefined &#x26;&#x26; spacesBetween !== exactly) {
-        emitError(&#x27;exactly&#x27;, exactly);
+    if (exactly !== undefined &amp;&amp; spacesBetween !== exactly) {
+        emitError('exactly', exactly);
         return true;
     }
 
@@ -5358,57 +5351,57 @@ TokenAssert.prototype.whitespaceBetween = function(options) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">categorizeCloseParen = function (token) {
-    assert(token.value === &#x27;)&#x27;, &#x27;Input token must be a parenthesis&#x27;);
+    assert(token.value === ')', 'Input token must be a parenthesis');
     var node = token.parentElement;
     var nodeType = node.type;
     var nextToken = token.getNextCodeToken();
 
     // Terminal statement
-    if (nextToken.type === &#x27;EOF&#x27;) {
+    if (nextToken.type === 'EOF') {
         switch (nodeType) {
-            case &#x27;DoWhileStatement&#x27;:
-                return &#x27;Statement&#x27;;
-            case &#x27;CallExpression&#x27;:
-            case &#x27;NewExpression&#x27;:
-                return &#x27;CallExpression&#x27;;
+            case 'DoWhileStatement':
+                return 'Statement';
+            case 'CallExpression':
+            case 'NewExpression':
+                return 'CallExpression';
             default:
-                return &#x27;ParenthesizedExpression&#x27;;
+                return 'ParenthesizedExpression';
         }
     }
 
     // Part of a parentheses-bearing statement (if, with, while, switch, etc.)
-    if (PAREN_KEYWORD_TYPE_RE.test(nodeType) &#x26;&#x26; !NO_PAREN_KEYWORD_TYPE_RE.test(nodeType)) {
-        // Closing parentheses for `switch` and `catch` must be followed by &#x22;{&#x22;
+    if (PAREN_KEYWORD_TYPE_RE.test(nodeType) &amp;&amp; !NO_PAREN_KEYWORD_TYPE_RE.test(nodeType)) {
+        // Closing parentheses for `switch` and `catch` must be followed by "{"
         // Closing parentheses for `do..while` may be the last punctuation inside a block
-        if (nextToken.value === &#x27;{&#x27; || nextToken.value === &#x27;}&#x27;) {
-            return &#x27;Statement&#x27;;
+        if (nextToken.value === '{' || nextToken.value === '}') {
+            return 'Statement';
         }
 
         // Closing parentheses for other statements must be followed by a statement or declaration
         var nextNode = nextToken.parentElement;
         while (!nodeContains(nextNode, token)) {
             if (QUASI_STATEMENT_TYPE_RE.test(nextNode.type)) {
-                return &#x27;Statement&#x27;;
+                return 'Statement';
             }
             nextNode = nextNode.parentElement;
         }
     }
 
     // Part of a function definition (declaration, expression, method, etc.)
-    if (nextToken.value === &#x27;{&#x27; &#x26;&#x26; FUNCTION_TYPE_RE.test(nodeType)) {
-        return &#x27;Function&#x27;;
+    if (nextToken.value === '{' &amp;&amp; FUNCTION_TYPE_RE.test(nodeType)) {
+        return 'Function';
     }
 
     // Part of a call expression
-    if ((nodeType === &#x27;CallExpression&#x27; || nodeType === &#x27;NewExpression&#x27;)) {
+    if ((nodeType === 'CallExpression' || nodeType === 'NewExpression')) {
         var openParen = node.callee.getNextToken();
-        if (openParen.parentElement === node &#x26;&#x26; node.lastChild === token) {
-            return &#x27;CallExpression&#x27;;
+        if (openParen.parentElement === node &amp;&amp; node.lastChild === token) {
+            return 'CallExpression';
         }
     }
 
     // All remaining cases are grouping parentheses
-    return &#x27;ParenthesizedExpression&#x27;;
+    return 'ParenthesizedExpression';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -5423,48 +5416,48 @@ TokenAssert.prototype.whitespaceBetween = function(options) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">categorizeOpenParen = function (token) {
-    assert(token.value === &#x27;(&#x27;, &#x27;Input token must be a parenthesis&#x27;);
+    assert(token.value === '(', 'Input token must be a parenthesis');
     var node = token.parentElement;
     var nodeType = node.type;
     var prevToken = token.getPreviousCodeToken();
 
     // Outermost grouping parenthesis
     if (!prevToken) {
-        return &#x27;ParenthesizedExpression&#x27;;
+        return 'ParenthesizedExpression';
     }
 
     // Part of a parentheses-bearing statement (if, with, while, switch, etc.)
-    if (prevToken.type === &#x27;Keyword&#x27; &#x26;&#x26; PAREN_KEYWORD_TYPE_RE.test(nodeType) &#x26;&#x26;
+    if (prevToken.type === 'Keyword' &amp;&amp; PAREN_KEYWORD_TYPE_RE.test(nodeType) &amp;&amp;
         !NO_PAREN_KEYWORD_TYPE_RE.test(nodeType)) {
 
-        return &#x27;Statement&#x27;;
+        return 'Statement';
     }
 
     // Part of a function definition (declaration, expression, method, etc.)
-    if (FUNCTION_TYPE_RE.test(nodeType) &#x26;&#x26;
+    if (FUNCTION_TYPE_RE.test(nodeType) &amp;&amp;
 
         // Name is optional for function expressions
-        (prevToken.type === &#x27;Identifier&#x27; || prevToken.value === &#x27;function&#x27;)) {
+        (prevToken.type === 'Identifier' || prevToken.value === 'function')) {
 
-        return &#x27;Function&#x27;;
+        return 'Function';
     }
 
     // Part of a call expression
     var prevNode = prevToken.parentElement;
-    if ((nodeType === &#x27;CallExpression&#x27; || nodeType === &#x27;NewExpression&#x27;) &#x26;&#x26;
+    if ((nodeType === 'CallExpression' || nodeType === 'NewExpression') &amp;&amp;
 
         // Must not be inside an arguments list or other grouping parentheses
-        prevToken.value !== &#x27;,&#x27; &#x26;&#x26; prevToken.value !== &#x27;(&#x27; &#x26;&#x26;
+        prevToken.value !== ',' &amp;&amp; prevToken.value !== '(' &amp;&amp;
 
         // If the callee is parenthesized (e.g., `(foo.bar)()`), prevNode will match node
         // Otherwise (e.g., `foo.bar()`), prevToken must be the last token of the callee node
         (prevNode === node || prevToken === node.callee.getLastToken())) {
 
-        return &#x27;CallExpression&#x27;;
+        return 'CallExpression';
     }
 
     // All remaining cases are grouping parentheses
-    return &#x27;ParenthesizedExpression&#x27;;
+    return 'ParenthesizedExpression';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -5484,7 +5477,7 @@ TokenAssert.prototype.whitespaceBetween = function(options) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function iterate(node, cb) {
-    if (&#x27;type&#x27; in node) {
+    if ('type' in node) {
         estraverse.traverse(node, {
             enter: function(node, parent) {
                 var parentCollection = [];
@@ -5493,9 +5486,9 @@ TokenAssert.prototype.whitespaceBetween = function(options) {
                 var path = this.path();
                 if (path) {
                     var collectionKey;
-                    while (path.length &#x3e; 0) {
+                    while (path.length &gt; 0) {
                         var pathElement = path.pop();
-                        if (typeof pathElement === &#x27;string&#x27;) {
+                        if (typeof pathElement === 'string') {
                             collectionKey = pathElement;
                             break;
                         }
@@ -5549,20 +5542,20 @@ iterate: function(cb, tree) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getFunctionNodeFromIIFE = function (node) {
-    if (node.type !== &#x27;CallExpression&#x27;) {
+    if (node.type !== 'CallExpression') {
         return null;
     }
 
     var callee = node.callee;
 
-    if (callee.type === &#x27;FunctionExpression&#x27;) {
+    if (callee.type === 'FunctionExpression') {
         return callee;
     }
 
-    if (callee.type === &#x27;MemberExpression&#x27; &#x26;&#x26;
-        callee.object.type === &#x27;FunctionExpression&#x27; &#x26;&#x26;
-        callee.property.type === &#x27;Identifier&#x27; &#x26;&#x26;
-        (callee.property.name === &#x27;call&#x27; || callee.property.name === &#x27;apply&#x27;)
+    if (callee.type === 'MemberExpression' &amp;&amp;
+        callee.object.type === 'FunctionExpression' &amp;&amp;
+        callee.property.type === 'Identifier' &amp;&amp;
+        (callee.property.name === 'call' || callee.property.name === 'apply')
     ) {
         return callee.object;
     }
@@ -5583,33 +5576,33 @@ iterate: function(cb, tree) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">isPragma = function (additionalExceptions) {
     var pragmaKeywords = [
-        &#x27;eslint&#x27;,
-        &#x27;eslint-env&#x27;,
-        &#x27;eslint-enable&#x27;,
-        &#x27;eslint-disable&#x27;,
-        &#x27;eslint-disable-line&#x27;,
-        &#x27;eslint-disable-next-line&#x27;,
-        &#x27;global&#x27;,
-        &#x27;jshint&#x27;,
-        &#x27;jslint&#x27;,
-        &#x27;globals&#x27;,
-        &#x27;falls through&#x27;,
-        &#x27;exported&#x27;,
-        &#x27;jscs:&#x27;,
-        &#x27;jscs:enable&#x27;,
-        &#x27;jscs:disable&#x27;,
-        &#x27;jscs:ignore&#x27;,
-        &#x27;istanbul&#x27;
+        'eslint',
+        'eslint-env',
+        'eslint-enable',
+        'eslint-disable',
+        'eslint-disable-line',
+        'eslint-disable-next-line',
+        'global',
+        'jshint',
+        'jslint',
+        'globals',
+        'falls through',
+        'exported',
+        'jscs:',
+        'jscs:enable',
+        'jscs:disable',
+        'jscs:ignore',
+        'istanbul'
     ];
-    if (additionalExceptions &#x26;&#x26; Array.isArray(additionalExceptions)) {
+    if (additionalExceptions &amp;&amp; Array.isArray(additionalExceptions)) {
         pragmaKeywords = pragmaKeywords.concat(additionalExceptions);
     }
 
     return function(comment) {
         // pragmaKeywords precede a space or the end of the comment
-        var trimmedComment = comment.trim() + &#x27; &#x27;;
-        for (var i = 0; i &#x3c; pragmaKeywords.length; i++) {
-            if (trimmedComment.indexOf(pragmaKeywords[i] + &#x27; &#x27;) === 0) {
+        var trimmedComment = comment.trim() + ' ';
+        for (var i = 0; i &lt; pragmaKeywords.length; i++) {
+            if (trimmedComment.indexOf(pragmaKeywords[i] + ' ') === 0) {
                 return true;
             }
         }
@@ -5631,7 +5624,7 @@ iterate: function(cb, tree) {
     <li>description and source-code<pre class="apidocCodePre">isRelativePath = function (path) {
     // Logic from: https://github.com/joyent/node/blob/4f1ae11a62b97052bc83756f8cb8700cc1f61661/lib/module.js#L237
     var start = path.substring(0, 2);
-    return start === &#x27;./&#x27; || start === &#x27;..&#x27;;
+    return start === './' || start === '..';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
  * or just returns the filepath if not relative
@@ -5677,9 +5670,9 @@ exports.normalizePath = function(filepath, basePath) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">isValidIdentifierName = function (name, dialect) {
-    dialect = dialect || &#x27;es5&#x27;;
-    var identifierRegex = dialect === &#x27;es5&#x27; ? IDENTIFIER_NAME_ES5_RE : IDENTIFIER_NAME_ES6_RE;
-    return !reservedWords.check(name, dialect, true) &#x26;&#x26; identifierRegex.test(name);
+    dialect = dialect || 'es5';
+    var identifierRegex = dialect === 'es5' ? IDENTIFIER_NAME_ES5_RE : IDENTIFIER_NAME_ES6_RE;
+    return !reservedWords.check(name, dialect, true) &amp;&amp; identifierRegex.test(name);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -5743,7 +5736,7 @@ exports.normalizePath = function(filepath, basePath) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">trimUnderscores = function (name) {
-    var res = name.replace(TRAILING_UNDERSCORES_RE, &#x27;&#x27;);
+    var res = name.replace(TRAILING_UNDERSCORES_RE, '');
     return res ? res : name;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5770,3 +5763,4 @@ exports.normalizePath = function(filepath, basePath) {
     ]
 </div>
 </div>
+</body></html>
