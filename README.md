@@ -1,6 +1,6 @@
 # npmdoc-jscs
 
-#### api documentation for  [jscs (v3.0.7)](http://jscs.info)  [![npm package](https://img.shields.io/npm/v/npmdoc-jscs.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-jscs) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-jscs.svg)](https://travis-ci.org/npmdoc/node-npmdoc-jscs)
+#### basic api documentation for  [jscs (v3.0.7)](http://jscs.info)  [![npm package](https://img.shields.io/npm/v/npmdoc-jscs.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-jscs) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-jscs.svg)](https://travis-ci.org/npmdoc/node-npmdoc-jscs)
 
 #### JavaScript Code Style
 
